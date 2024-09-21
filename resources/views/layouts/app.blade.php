@@ -26,7 +26,7 @@
         <x-menu.side-menu/>
 
         <!-- Page Content -->
-        <main {{$attributes}} class="bg-[#F8F8FF] print:bg-white sm:p-5 p-2 ">
+        <main {{$attributes}} class="bg-white print:bg-white sm:p-5 p-2 ">
             {{ $slot }}
         </main>
 

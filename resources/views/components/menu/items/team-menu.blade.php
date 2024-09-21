@@ -1,5 +1,6 @@
-<x-menu.base.route-menuitem  href="{{route('dashboard')}}" label="New Member"/>
-<x-menu.base.route-menuitem  href="{{route('dashboard')}}" label="Tree View"/>
+<x-menu.base.route-menuitem  href="{{route('tree')}}" label="Tree View"/>
+<x-menu.base.route-menuitem  href="{{route('dashboard')}}" label="My Member"/>
+<x-menu.base.route-menuitem  href="{{route('dashboard')}}" label="My Referral"/>
 
 
 
