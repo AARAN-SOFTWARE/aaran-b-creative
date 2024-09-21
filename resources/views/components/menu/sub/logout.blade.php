@@ -1,12 +1,12 @@
 {{-- logout--}}
-<li {{ $attributes->class(['bottom-0 left-0 bg-white cursor-pointer py-1
+<li {{ $attributes->class(['bottom-0 left-0 bg-white cursor-pointer
 ']) }}>
 
     <form method="POST" action="{{ route('logout') }}">
         @csrf
         <a href="{{ route('logout') }}"
            onclick="event.preventDefault(); this.closest('form').submit();"
-           class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-violet text-gray-500
+           class="relative flex flex-row items-center h-16 focus:outline-none hover:bg-violet text-gray-500
            hover:text-gray-200 hover:border-red-500 px-4 space-x-2">
                                 <span class="inline-flex justify-center items-center  text-red-400">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
