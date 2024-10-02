@@ -17,6 +17,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
+
+    Route::get('/register-member', App\Livewire\Network\Auth\Register::class)->name('register-member');
+});
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
+
     Route::get('/elements', App\Livewire\Utilities\UiElements\Index::class)->name('elements');
     Route::get('/icons', App\Livewire\Utilities\Icon\Index::class)->name('icons');
     Route::get('/test', App\Livewire\Test\Index::class)->name('test');
