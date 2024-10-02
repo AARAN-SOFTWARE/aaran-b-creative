@@ -19,6 +19,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
 
     Route::get('/register-member', App\Livewire\Network\Auth\Register::class)->name('register-member');
+    Route::get('adminDashboard', App\Livewire\Admin\Dashboard\Index::class)->name('adminDashboard');
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
