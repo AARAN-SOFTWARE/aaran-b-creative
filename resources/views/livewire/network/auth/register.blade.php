@@ -29,6 +29,10 @@
                     <label for="" class="text-xs text-white font-semibold inline-flex gap-x-1">Phone No<span class="text-red-500">*</span></label>
                     <input type="text" class="bg-transparent text-white border-white border rounded-md">
                 </div>
+                <div class="flex-col flex">
+                    <label for="" class="text-xs text-white font-semibold inline-flex gap-x-1">Password<span class="text-red-500">*</span></label>
+                    <input type="password" class="bg-transparent text-white border-white border rounded-md">
+                </div>
                 <div>
                     <input type="checkbox" class="w-4 h-4 bg-transparent border-white  text-blue-600  rounded-sm transition-all ease-linear duration-500 ">
                 </div>
