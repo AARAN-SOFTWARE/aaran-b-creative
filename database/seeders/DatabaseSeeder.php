@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use Aaran\Common\Database\Seeders\S101_LabelSeeder;
+use Aaran\Common\Database\Seeders\S102_CommonSeeder;
+
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -11,12 +14,6 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
-            'name' => 'sundar',
-            'email' => 'sundar@sundar.com',
-            'password' => bcrypt('kalarani'),
-            'email_verified_at' => now(),
-            'remember_token' => Str::random(10),
-        ]);
+        S03_UserSeeder::run();
     }
 }
