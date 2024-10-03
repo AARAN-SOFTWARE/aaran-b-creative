@@ -11,6 +11,7 @@ class S03_UserSeeder extends Seeder
     public static function run(): void
     {
         User::create([
+            'username' => 'sundar',
             'name' => 'sundar',
             'email' => 'sundar@sundar.com',
             'password' => bcrypt('kalarani'),
@@ -19,6 +20,7 @@ class S03_UserSeeder extends Seeder
         ]);
 
         User::create([
+            'username' => 'developer',
             'name' => 'Developer',
             'email' => 'developer@aaran.org',
             'password' => bcrypt('123456789'),
@@ -28,6 +30,7 @@ class S03_UserSeeder extends Seeder
 
 
         User::create([
+            'username' => 'audit',
             'name' => 'audit',
             'email' => 'audit@aaran.org',
             'password' => bcrypt('123456789'),
