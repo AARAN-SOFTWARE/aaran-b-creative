@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', App\Livewire\Web\Home\Index::class)->name('home');
@@ -12,7 +13,13 @@ Route::get('/info', App\Livewire\Web\Home\Info::class)->name('info');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
-    Route::get('/dashboard', App\Livewire\Web\Dashboard\Index::class)->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('user.dashboard');
+    })->name('dashboard');
+//    Route::get('/dashboard', App\Livewire\Web\Dashboard\Index::class)->name('dashboard');
+
+    Route::get('/dash', [AdminController::class, 'index'])->name('dash');
+
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {

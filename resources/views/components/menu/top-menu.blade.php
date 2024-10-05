@@ -21,7 +21,7 @@
             <div
                 class=" font-semibold sm:text-xl text-md text-gray-800 leading-tight sm:px-0 px-2 self-start">
 
-                {{$slot ?? 'Dashboard'}}
+                {{$slot}}
             </div>
         </div>
 
