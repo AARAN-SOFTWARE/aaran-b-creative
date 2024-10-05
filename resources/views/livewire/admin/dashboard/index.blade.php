@@ -5,6 +5,7 @@
         <div class="w-full px-16 h-[20rem] mx-auto flex flex-row justify-between gap-x-5 p-3">
 
             <!-- card1 --------------------------------------------------------------------------------------->
+
             <div class="w-full h-[195px] p-3 border rounded-md">
                 <div class="my-2">TOTAL USERS</div>
                 <div class="flex flex-row">
@@ -25,11 +26,20 @@
                             <span>0  blocked User</span>
                         </div>
                     </div>
+
                     <div class="w-3/12">
-                        <svg fill="#000000" width="40px" height="40px" viewBox="0 -64 640 640"
+                        <svg width="100px" height="100px" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="9" cy="9" r="2" stroke="#1C274C" stroke-width="1.5"/>
                             <path
-                                d="M610.5 341.3c2.6-14.1 2.6-28.5 0-42.6l25.8-14.9c3-1.7 4.3-5.2 3.3-8.5-6.7-21.6-18.2-41.2-33.2-57.4-2.3-2.5-6-3.1-9-1.4l-25.8 14.9c-10.9-9.3-23.4-16.5-36.9-21.3v-29.8c0-3.4-2.4-6.4-5.7-7.1-22.3-5-45-4.8-66.2 0-3.3.7-5.7 3.7-5.7 7.1v29.8c-13.5 4.8-26 12-36.9 21.3l-25.8-14.9c-2.9-1.7-6.7-1.1-9 1.4-15 16.2-26.5 35.8-33.2 57.4-1 3.3.4 6.8 3.3 8.5l25.8 14.9c-2.6 14.1-2.6 28.5 0 42.6l-25.8 14.9c-3 1.7-4.3 5.2-3.3 8.5 6.7 21.6 18.2 41.1 33.2 57.4 2.3 2.5 6 3.1 9 1.4l25.8-14.9c10.9 9.3 23.4 16.5 36.9 21.3v29.8c0 3.4 2.4 6.4 5.7 7.1 22.3 5 45 4.8 66.2 0 3.3-.7 5.7-3.7 5.7-7.1v-29.8c13.5-4.8 26-12 36.9-21.3l25.8 14.9c2.9 1.7 6.7 1.1 9-1.4 15-16.2 26.5-35.8 33.2-57.4 1-3.3-.4-6.8-3.3-8.5l-25.8-14.9zM496 368.5c-26.8 0-48.5-21.8-48.5-48.5s21.8-48.5 48.5-48.5 48.5 21.8 48.5 48.5-21.7 48.5-48.5 48.5zM96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm224 32c1.9 0 3.7-.5 5.6-.6 8.3-21.7 20.5-42.1 36.3-59.2 7.4-8 17.9-12.6 28.9-12.6 6.9 0 13.7 1.8 19.6 5.3l7.9 4.6c.8-.5 1.6-.9 2.4-1.4 7-14.6 11.2-30.8 11.2-48 0-61.9-50.1-112-112-112S208 82.1 208 144c0 61.9 50.1 112 112 112zm105.2 194.5c-2.3-1.2-4.6-2.6-6.8-3.9-8.2 4.8-15.3 9.8-27.5 9.8-10.9 0-21.4-4.6-28.9-12.6-18.3-19.8-32.3-43.9-40.2-69.6-10.7-34.5 24.9-49.7 25.8-50.3-.1-2.6-.1-5.2 0-7.8l-7.9-4.6c-3.8-2.2-7-5-9.8-8.1-3.3.2-6.5.6-9.8.6-24.6 0-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h255.4c-3.7-6-6.2-12.8-6.2-20.3v-9.2zM173.1 274.6C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"/>
+                                d="M13 15C13 16.1046 13 17 9 17C5 17 5 16.1046 5 15C5 13.8954 6.79086 13 9 13C11.2091 13 13 13.8954 13 15Z"
+                                stroke="#1C274C" stroke-width="1.5"/>
+                            <path
+                                d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z"
+                                stroke="#1C274C" stroke-width="1.5"/>
+                            <path d="M19 12H15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M19 9H14" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M19 15H16" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                     </div>
                 </div>
@@ -55,7 +65,21 @@
                             <x-icons.icon :icon="'chevrons-up'" class="w-4 h-4"/>
                             <span>10 Current Months Activation</span></div>
                     </div>
-                    <span class="w-3/12">dsd</span>
+
+                    <span class="w-3/12">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             viewBox="0 0 512.001 512.001" xml:space="preserve">
+                                <g>
+                                    <rect y="304.846" style="fill:#939393;" width="132.858" height="169.763"/>
+                                    <rect x="189.572" y="174.554" style="fill:#939393;" width="132.858"
+                                          height="300.055"/>
+                                    <rect x="379.143" y="37.391" style="fill:#939393;" width="132.858"
+                                          height="437.218"/>
+                                </g>
+                            </svg>
+
+                        </span>
                 </div>
             </div>
 
@@ -77,7 +101,21 @@
                             <x-icons.icon :icon="'chevrons-up'" class="w-4 h-4"/>
                             <span>10 Current Month's Earnings</span></div>
                     </div>
-                    <span class="w-3/12">dsd</span>
+                    <span class="w-3/12"><svg width="100px" height="100px" viewBox="0 0 21 21"
+                                              xmlns="http://www.w3.org/2000/svg">
+
+                    <g fill="none" fill-rule="evenodd" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
+                       transform="translate(4 3)">
+
+                    <path d="m.5.5v11c0 1.1045695.8954305 2 2 2h11"/>
+
+                    <path d="m2.5 9.5 3-3 2 2 5-5"/>
+
+                    <path d="m12.5 6.5v-3h-3"/>
+
+                    </g>
+
+                    </svg></span>
                 </div>
             </div>
 
@@ -99,10 +137,24 @@
                             <x-icons.icon :icon="'chevrons-up'" class="w-4 h-4"/>
                             <span>10 Today's Payouts</span></div>
                     </div>
-                    <span class="w-3/12">dsd</span>
+                    <span class="w-3/12"><svg width="100px" height="100px" viewBox="0 0 24 24" fill="none"
+                                              xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.2779 13.8894C17.9527 13.8894 18.519 14.4462 18.4158 15.1125C17.8106 19.0325 14.4548 21.9431 10.4074 21.9431C5.92952 21.9431 2.30005 18.3136 2.30005 13.8368C2.30005 10.1483 5.10215 6.71255 8.25689 5.9357C8.93479 5.76834 9.62952 6.24518 9.62952 6.94307C9.62952 11.6715 9.78847 12.8947 10.6864 13.5599C11.5843 14.2252 12.64 13.8894 17.2779 13.8894Z"
+                          stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd"
+                          d="M21.6926 9.9517C21.7463 6.9138 18.0147 2.01696 13.4674 2.10117C13.1137 2.10749 12.8305 2.40222 12.8147 2.75485C12.7 5.25275 12.8547 8.48959 12.9411 9.95696C12.9674 10.4138 13.3263 10.7727 13.7821 10.7991C15.2905 10.8854 18.6453 11.0033 21.1074 10.6306C21.4421 10.5801 21.6874 10.2896 21.6926 9.9517Z"
+                          stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></span>
                 </div>
             </div>
 
+        </div>
+
+        <div class="w-full px-16 h-[35rem] flex flex-row justify-between gap-8">
+
+            <div class="w-8/12 border ">dsddsd</div>
+            <div class="w-4/12 border">dsdsdsd</div>
 
         </div>
     </div>
