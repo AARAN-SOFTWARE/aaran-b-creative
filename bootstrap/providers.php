@@ -7,7 +7,6 @@ return [
     App\Providers\EventServiceProvider::class,
 
     Aaran\Aadmin\Providers\AadminServiceProvider::class,
-    Aaran\Common\Providers\CommonServiceProvider::class,
+    Aaran\Member\Providers\MemberServiceProvider::class,
     Aaran\Web\Providers\WebServiceProvider::class,
-
 ];

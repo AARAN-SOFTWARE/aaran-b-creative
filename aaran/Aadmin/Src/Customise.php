@@ -125,4 +125,16 @@ class Customise
         return 'demodata';
     }
     #endregion
+
+    #region[Users]
+    public static function hasUsers(): bool
+    {
+        return static::enabled(static::users());
+    }
+
+    public static function users(): string
+    {
+        return 'users';
+    }
+    #endregion
 }

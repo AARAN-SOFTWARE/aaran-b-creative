@@ -32,7 +32,7 @@
         </li>
         @if (Route::has('login'))
             @auth
-                <li class="hover:tracking-wider hover:font-bold hover:text-cyan-300 hover:underline duration-300 transition-all ease-out"><a href="{{route('dash')}}"
+                <li class="hover:tracking-wider hover:font-bold hover:text-cyan-300 hover:underline duration-300 transition-all ease-out"><a href="{{route('dashboard')}}"
                        class="underline-offset-2  focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white"
                        wire:navigate>Dashboard</a>
                 </li>
@@ -50,6 +50,7 @@
                        class="font-semibold underline-offset-2  focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white"
                        wire:navigate>Login</a>
                 </li>
+
             @endauth
         @endif
     </ul>
@@ -94,7 +95,7 @@
         </li>
         @if (Route::has('login'))
             @auth
-                <li class="py-2"><a href="{{route('dash')}}"
+                <li class="py-2"><a href="{{route('dashboard')}}"
                                     class="w-full text-sm font-medium text-neutral-600 focus:underline dark:text-neutral-300" wire:navigate>Dashboard</a>
                 </li>
                 <li class="py-2"><a href="{{route('logout')}}"

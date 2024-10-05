@@ -8,10 +8,14 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            <div>
+                <x-jet.label for="uid" value="{{ __('Referral ID') }}" />
+                <x-jet.input id="uid" class="block mt-1 w-full" type="text" name="uid" :value="old('uid')" required autofocus autocomplete="Referral ID"/>
+            </div>
 
             <div>
-                <x-jet.label for="username" value="{{ __('username') }}" />
-                <x-jet.input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
+                <x-jet.label for="username" value="{{ __('UserName') }}" />
+                <x-jet.input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required  />
             </div>
 
             <div>
@@ -21,7 +25,12 @@
 
             <div class="mt-4">
                 <x-jet.label for="email" value="{{ __('Email') }}" />
-                <x-jet.input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-jet.input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required  />
+            </div>
+
+            <div class="mt-4">
+                <x-jet.label for="phone" value="{{ __('Phone') }}" />
+                <x-jet.input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" required  />
             </div>
 
             <div class="mt-4">

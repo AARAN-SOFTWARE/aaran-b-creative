@@ -65,8 +65,8 @@
             <div class="w-4/12 h-full gap-y-3 p-5 rounded-md border-gray-300 border flex-col flex justify-between">
                 <div class="w-full h-full p-5 border border-gray-300 text-sm rounded-md flex-col flex justify-between">
                     <div class="border-b border-gray-300"><span>User ID:</span><span
-                            class="font-bold text-sm text-violet-600">DEMO0001</span></div>
-                    <div class="border-b border-gray-300"><span>Name:</span><span
+                            class="font-bold text-sm text-violet-600">{{$users->username}}</span></div>
+                    <div class="border-b border-gray-300"><span>{{$users->name}}</span><span
                             class="font-bold text-sm text-violet-600">DEMO</span>
                     </div>
                     <div class="border-b border-gray-300"><span>Referral ID:</span><span

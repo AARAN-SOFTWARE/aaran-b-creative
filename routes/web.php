@@ -13,21 +13,18 @@ Route::get('/info', App\Livewire\Web\Home\Info::class)->name('info');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('user.dashboard');
-    })->name('dashboard');
+//    Route::get('/dashboard', function () {
+//        return view('user.dashboard');
+//    })->name('dashboard');
 //    Route::get('/dashboard', App\Livewire\Web\Dashboard\Index::class)->name('dashboard');
-
-    Route::get('/dash', [AdminController::class, 'index'])->name('dash');
-
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dash');
+    Route::get('/dash', [AdminController::class, 'index'])->name('dashboard');
 });
 
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
-
-
-    Route::get('/register-member', App\Livewire\Network\Auth\Register::class)->name('register-member');
-    Route::get('adminDashboard', App\Livewire\Admin\Dashboard\Index::class)->name('adminDashboard');
-});
+//Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
+//
+//    Route::get('adminDashboard', App\Livewire\Admin\Dashboard\Index::class)->name('adminDashboard');
+//});
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
 
