@@ -50,6 +50,10 @@
                        class="font-semibold underline-offset-2  focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white"
                        wire:navigate>Login</a>
                 </li>
+                <li class="hover:tracking-wider hover:font-bold hover:text-cyan-300 hover:underline duration-300 transition-all ease-out"><a href="{{route('register')}}"
+                     class="font-semibold underline-offset-2  focus:outline-none focus:underline dark:text-neutral-300 dark:hover:text-white"
+                     wire:navigate>Register</a>
+                </li>
 
             @endauth
         @endif
