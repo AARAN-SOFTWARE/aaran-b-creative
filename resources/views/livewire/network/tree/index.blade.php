@@ -61,41 +61,78 @@
                 <div class="w-[20%] text-center">50000</div>
             </div>
         </div>
+
         <div class="w-8/12 flex-col flex justify-center items-center bg-slate-50 rounded-md">
-            <div class="flex-col flex justify-center items-center">
-                <x-livewire.network.items.user-card/>
-                <x-livewire.network.items.leaf-1/>
-            </div>
-            <div class="flex">
-                <div class="w-72 flex justify-center items-center">
-                    <x-livewire.network.items.user-card/>
-                </div>
-                <div class="w-72 flex justify-center items-center">
-                    <x-livewire.network.items.new-user-card/>
-                </div>
-            </div>
-            <div class="w-[864px] flex justify-between">
-                <div class=" flex-col flex justify-center items-end">
-                    <x-livewire.network.items.leaf-left/>
-                </div>
-                <div class="flex-col flex justify-center items-start">
-                    <x-livewire.network.items.leaf-right/>
-                </div>
-            </div>
-            <div class="flex">
-                <div class="w-72 flex justify-center items-center">
-                    <x-livewire.network.items.new-user-card/>
-                </div>
-                <div class="w-72 flex justify-center items-center">
-                    <x-livewire.network.items.user-card/>
-                </div>
-                <div class="w-72 flex justify-center items-center">
-                    <x-livewire.network.items.new-user-card/>
-                </div>
-                <div class="w-72 flex justify-center items-center">
-                    <x-livewire.network.items.new-user-card/>
-                </div>
+            {{--            <div class="flex-col flex justify-center items-center">--}}
+            {{--                <x-livewire.network.items.user-card/>--}}
+            {{--                <x-livewire.network.items.leaf-1/>--}}
+            {{--            </div>--}}
+            {{--            <div class="flex">--}}
+            {{--                <div class="w-72 flex justify-center items-center">--}}
+            {{--                    <x-livewire.network.items.user-card/>--}}
+            {{--                </div>--}}
+            {{--                <div class="w-72 flex justify-center items-center">--}}
+            {{--                    <x-livewire.network.items.new-user-card/>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            {{--            <div class="w-[864px] flex justify-between">--}}
+            {{--                <div class=" flex-col flex justify-center items-end">--}}
+            {{--                    <x-livewire.network.items.leaf-left/>--}}
+            {{--                </div>--}}
+            {{--                <div class="flex-col flex justify-center items-start">--}}
+            {{--                    <x-livewire.network.items.leaf-right/>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            {{--            <div class="flex">--}}
+            {{--                <div class="w-72 flex justify-center items-center">--}}
+            {{--                    <x-livewire.network.items.new-user-card/>--}}
+            {{--                </div>--}}
+            {{--                <div class="w-72 flex justify-center items-center">--}}
+            {{--                    <x-livewire.network.items.user-card/>--}}
+            {{--                </div>--}}
+            {{--                <div class="w-72 flex justify-center items-center">--}}
+            {{--                    <x-livewire.network.items.new-user-card/>--}}
+            {{--                </div>--}}
+            <div class="w-72 flex justify-center items-center">
+
+                <x-livewire.network.items.user-card :list="$user"/>
             </div>
         </div>
+    </div>
+
+    <div>
+        <div class="tree">
+            <h1>User Tree</h1>
+            @foreach ($user_data as $user)
+                @include('livewire.tree-node', ['user' => $user])
+            @endforeach
+        </div>
+
+        <style>
+            .tree {
+                margin: 20px;
+            }
+            .node {
+                margin-left: 20px;
+                position: relative;
+            }
+            .node::before {
+                content: '';
+                position: absolute;
+                left: -10px;
+                top: 10px;
+                border-left: 1px solid #ccc;
+                height: 100%;
+            }
+            .node::after {
+                content: '';
+                position: absolute;
+                left: -10px;
+                top: 0;
+                border-top: 1px solid #ccc;
+                width: 10px;
+            }
+        </style>
+
     </div>
 </div>

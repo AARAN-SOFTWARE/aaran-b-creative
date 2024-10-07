@@ -1,3 +1,8 @@
+@props([
+    'list'=> null
+])
+@foreach($list as $row)
+
 <div class="w-20 h-[88px] ">
     <div class="w-full h-full relative flex-col flex justify-end">
         <div class="absolute bottom-10 left-4 w-12 h-12 bg-gray-300 p-1.5 rounded-full">
@@ -11,8 +16,9 @@
             </div>
         </div>
         <div class="border border-gray-300 h-16 text-[10px] font-bold text-gray-500 bg-white flex-col flex items-center justify-end rounded-md py-1">
-            <div>USER0001</div>
-            <div>USERName1</div>
+            <div>{{$row->username}}</div>
+            <div>{{$row->name}}</div>
         </div>
     </div>
 </div>
+@endforeach
