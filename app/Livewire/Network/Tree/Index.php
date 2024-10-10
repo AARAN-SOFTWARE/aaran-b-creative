@@ -12,7 +12,7 @@ class Index extends Component
 
     public function mount()
     {
-//        $this->user_data = DB::table('users')
+        //        $this->user_data = DB::table('users')
 //            ->withRecursive('users_tree', function ($query) {
 //                return $query->select('id', 'name', 'uid')
 //                    ->whereNull('uid')
@@ -24,7 +24,7 @@ class Index extends Component
 //            ->select('*')
 //            ->from('users_tree')
 //            ->get();
-        $this->user_data =   User::with('children')->whereNull('uid')->get();
+        $this->user_data = User::with('children')->whereNull('parent_id')->get();
     }
 
 

@@ -1,5 +1,5 @@
 @props([
-    "list" =>null
+"list" =>null
 ])
 <div class="relative">
 
@@ -43,96 +43,39 @@
             let offset = slider.firstElementChild.getBoundingClientRect().width;
             this.currentSlide = Math.round(slider.scrollLeft / offset);
         },
-    }"
-
-         x-init="startAutoSlide()"
-         {{-- @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()"--}}
-         class="flex flex-col w-full">
+    }" x-init="startAutoSlide()" {{-- @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()"--}} class="flex flex-col w-full">
 
         <!--image animation ----------------------------------------------------------------------------------->
 
         <div class="flex space-x-6">
 
 
-            <ul x-ref="slider" @scroll="updateCurrentSlide"
-                class="flex w-full md:h-screen h-52 overflow-x-hidden snap-x snap-mandatory">
+            <ul x-ref="slider" @scroll="updateCurrentSlide" class="flex w-full md:h-screen h-52 overflow-x-hidden snap-x snap-mandatory">
 
-                {{--                @if($list)--}}
-                {{--                    @forelse($list as $row)--}}
-                {{--                        <li class="flex flex-col items-center justify-center w-full md:h-screen h-80 shrink-0 snap-start relative">--}}
+                {{-- @if($list) --}}
+                {{-- @forelse($list as $row)
+                <x-slider.home-slider :bg_image="'/../../../storage/images/{{$row->bg_image}}'" title="{{$row->vname}}" slogan="{{$row->description}}" />
 
-                {{--                            <div style="background-image: url('/../../../storage/images/{{$row->bg_image}}');"--}}
-                {{--                                 class=" w-full md:h-screen h-80 bg-cover bg-no-repeat mx-auto flex-col brightness-75 flex justify-center relative">--}}
-                {{--                            </div>--}}
-                {{--                            <div--}}
-                {{--                                class="absolute bottom-1 left-10 w-auto h-10/12 flex-col text-white font-roboto p-5 my-5  px-10">--}}
+                @empty --}}
 
-                {{--                                <div--}}
-                {{--                                    class=" sm:text-6xl text-xs capitalize drop-shadow-lg">{{$row->vname}}</div>--}}
-                {{--                                <div--}}
-                {{--                                    class="sm:text-2xl text-xs mt-3 text-white">{{$row->description}}</div>--}}
-                {{--                                <div--}}
-                {{--                                    class="text-md mt-3 text-white">{{$row->created_at}}</div>--}}
-                {{--                            </div>--}}
-                {{--                        </li>--}}
-                {{--                    @empty--}}
-                <li class="flex flex-col items-center justify-center w-full sm:h-screen h-full shrink-0 snap-start relative">
-                    <div style="background-image: url('/../../../images/w3.webp');"
-                         class=" w-full md:h-screen h-full sm:bg-cover bg-contain bg-no-repeat mx-auto flex-col brightness-75 flex justify-center relative">
-                    </div>
-                    <div
-                        class="absolute bottom-1 left-10 w-auto h-10/12 flex-col text-white font-roboto p-5 my-5  px-10">
-                        <div
-                            class="sm:text-6xl sm:capitalize sm:drop-shadow-lg">GST Billing Software Online
-                            in India
-                        </div>
-                        <div
-                            class="sm:text-2xl text-xs mt-3 text-white">
-                            {{\Illuminate\Support\Str::words('Create, manage & track invoices, e-invoices, and
-                            eWay bills.
-                            Seamlessly generate GSTR reports and file GST instantly.
-                            100% safe, reliable, and secure GST-compliant billing software.
-                            Aaran for invoicing, quotations, inventory, eWay bills & more!',15)}}
-                        </div>
+                <x-slider.home-slider :bg_image="'/../../../images/network/slider/mlm1.webp'" title="Best Online GST Billing Software in India" slogan="Create, manage & track invoices, e-invoices, and eWay bills, 100% safe, reliable, and secure..." />
 
-                    </div>
-                </li>
-                <li class="flex flex-col items-center justify-center w-full sm:h-screen h-full shrink-0 snap-start relative">
-                    <div style="background-image: url('/../../../images/wp2.webp');"
-                         class=" w-full md:h-screen h-full sm:bg-cover bg-contain bg-no-repeat mx-auto flex-col brightness-75 flex justify-center relative">
-                    </div>
-                    <div
-                        class="absolute bottom-1 left-10 w-auto h-10/12 flex-col text-white font-roboto p-5 my-5  px-10">
-                        <div
-                            class="sm:text-6xl sm:capitalize sm:drop-shadow-lg">Only GST Billing Software You Need For
-                            Your Business
-                        </div>
-                        <div
-                            class="sm:text-2xl text-xs mt-3 text-white">
-                            {{\Illuminate\Support\Str::words('Streamline your invoicing with Refrens GST billing software:
-                            effortlessly create GST-compliant invoices in minutes. Seamlessly share invoices via WhatsApp,
-                            Email, PDF, and shareable links.',15)}}
-                        </div>
+                <x-slider.home-slider :bg_image="'/../../../images/network/slider/mlm2.webp'" title="Only GST Billing Software You Need For Your Business" slogan="Streamline your invoicing with GST billing software, effortlessly create GST-compliant invoices in minutes..." />
 
-                    </div>
-                </li>
-                <li class="flex flex-col items-center justify-center w-full sm:h-screen h-full shrink-0 snap-start relative">
-                    <div style="background-image: url('/../../../images/wp1.webp');"
-                         class=" w-full md:h-screen h-full sm:bg-cover bg-contain bg-no-repeat mx-auto flex-col brightness-75 flex justify-center relative">
-                    </div>
-                    <div
-                        class="absolute bottom-1 left-10 w-auto h-10/12 flex-col text-white font-roboto p-5 my-5  px-10">
-                        <div
-                            class="sm:text-6xl sm:capitalize sm:drop-shadow-lg">Empower your business with our streamlined GST billing software
-                        </div>
-                        <div
-                            class="sm:text-2xl text-xs mt-3 text-white">
-                            {{\Illuminate\Support\Str::words('Automate payment reminders for quicker settlements. Enjoy
-                            one-click IRN & QR Code generation for enhanced compliance.
-                            Experience the simplicity, reliability, and security of our user-friendly platform.',15)}}
-                        </div>
-                    </div>
-                </li>
+
+
+                <x-slider.home-slider :bg_image="'/../../../images/network/slider/mlm3.webp'" title="Book keeping and Transaction Recording" slogan="Categorized revenue, expenses, assets, liabilities, and other options.
+
+                            Further, reviewed in detail and adjusted according to the entries to ensure accuracy..." text_length="28" />
+
+                {{-- <x-slider.home-slider :bg_image="'/../../../images/network/mlm4.webp'" title="Maintain Regular Communication" slogan="Keeping clients in the loop about their financial standing and any pertinent
+
+                            changes to tax laws or financial regulations is vital." />
+
+                <x-slider.home-slider :bg_image="'/../../../images/network/mlm5.webp'" title="one-stop solution workflow management." slogan="Devote all your attention to a better customer experience for fast and secure information sharing" /> --}}
+
+                {{-- @endforelse
+                @endif --}}
             </ul>
         </div>
 
@@ -142,27 +85,23 @@
 
             <!-- Prev Button -------------------------------------------------------------------------------------->
             <button x-on:click="prev" @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()">
-                <x-icons.icon icon="chevrons-left"
-                              class="w-auto sm:h-12 h-7 block text-gray-300 hover:text-orange-500 rounded-xl hover:bg-orange-200 opacity-50 hover:opacity-100"/>
+                <x-icons.icon icon="chevrons-left" class="w-auto sm:h-12 h-7 block text-gray-300 hover:text-orange-500 rounded-xl hover:bg-orange-200 opacity-50 hover:opacity-100" />
             </button>
 
 
             <!-- Next Button -------------------------------------------------------------------------------------->
 
             <button x-on:click="next" @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()">
-                <x-icons.icon icon="chevrons-right"
-                              class="w-auto sm:h-12 h-7 block text-gray-300 hover:text-orange-500 rounded-xl hover:bg-orange-200 opacity-50 hover:opacity-100"/>
+                <x-icons.icon icon="chevrons-right" class="w-auto sm:h-12 h-7 block text-gray-300 hover:text-orange-500 rounded-xl hover:bg-orange-200 opacity-50 hover:opacity-100" />
             </button>
         </div>
 
         <!-- Indicators ------------------------------------------------------------------------------------------->
 
-        <div class="absolute z-10 w-full bottom-10 lg:bottom-12">
+        <div class="absolute z-10 w-full bottom-3 lg:bottom-12">
             <div class="flex justify-center space-x-2">
                 <template x-for="(slide, index) in Array.from($refs.slider.children)" :key="index">
-                    <button @click="goToSlide(index)"
-                            :class="{'bg-gray-500': currentSlide === index, 'bg-bubble': currentSlide !== index}"
-                            class="w-3 h-1 rounded-full lg:w-3 lg:h-3 hover:bg-orange-400 bg-gray-400 focus:outline-none"></button>
+                    <button @click="goToSlide(index)" :class="{'bg-gray-500': currentSlide === index, 'bg-bubble': currentSlide !== index}" class="w-3 h-1 rounded-full lg:w-3 lg:h-3 hover:bg-orange-400 bg-gray-400 focus:outline-none"></button>
                 </template>
             </div>
         </div>
@@ -170,6 +109,3 @@
 
 
 </div>
-
-
-
