@@ -172,8 +172,9 @@
 
                     </div>
                     <div class="w-full">
-                        <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +
-                        </button>
+{{--                        <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +--}}
+{{--                        </button>--}}
+                        @livewire('authentication.add-user')
                     </div>
                 </div>
             </div>

@@ -18,6 +18,9 @@ class S03_UserSeeder extends Seeder
             'password' => bcrypt('123456789'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
+            'level' => '1',
+            'position' => '',
+
         ]);
         User::create([
             'username' => 'AB0001',
@@ -26,6 +29,8 @@ class S03_UserSeeder extends Seeder
             'password' => bcrypt('kalarani'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
+            'level' => '2',
+            'position' => '',
         ]);
 
         User::create([
@@ -35,6 +40,8 @@ class S03_UserSeeder extends Seeder
             'password' => bcrypt('123456789'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
+            'level' => '2',
+            'position' => '',
         ]);
 
 
@@ -45,6 +52,8 @@ class S03_UserSeeder extends Seeder
             'password' => bcrypt('123456789'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
+            'level' => '3',
+            'position' => '',
         ]);
 
 //        User::create([
