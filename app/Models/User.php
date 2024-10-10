@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -24,7 +26,9 @@ class User extends Authenticatable
         'email',
         'phone',
         'password',
-        'uid',
+        'parent_id',
+        'level',
+        'position',
     ];
 
     protected $hidden = [
@@ -46,8 +50,19 @@ class User extends Authenticatable
         ];
     }
 
-    public function children()
+
+    public function parent():BelongsTo
     {
-        return $this->hasMany(User::class, 'uid');
+        return $this->belongsTo(User::class, 'parent_id');
+    }
+
+    public function children():HasMany
+    {
+        return $this->hasMany(User::class, 'parent_id');
+    }
+
+    public function calculateLevel()
+    {
+        return $this->parent ? $this->parent->calculateLevel() + 1 : 0;
     }
 }

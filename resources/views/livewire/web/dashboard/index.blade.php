@@ -165,9 +165,12 @@
                     </svg>
 
                 </div>
-                <div class="w-full">
-                    <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +</button>
-                </div>
+
+{{--                <div class="w-full">--}}
+{{--                    <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +</button>--}}
+{{--                    @livewire('authentication.add-user')--}}
+
+{{--                </div>--}}
             </div>
         </div>
         <div class="w-full h-96  flex-col flex justify-between border border-gray-300 rounded-md">
