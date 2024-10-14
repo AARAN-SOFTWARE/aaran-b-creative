@@ -50,7 +50,7 @@
         <div class="flex space-x-6">
 
 
-            <ul x-ref="slider" @scroll="updateCurrentSlide" class="flex w-full md:h-screen h-52 overflow-x-hidden snap-x snap-mandatory">
+            <ul x-ref="slider" @scroll="updateCurrentSlide" class="flex w-full md:h-[45rem] h-52 overflow-x-hidden snap-x snap-mandatory">
 
                 {{-- @if($list) --}}
                 {{-- @forelse($list as $row)
@@ -58,13 +58,15 @@
 
                 @empty --}}
 
-                <x-slider.home-slider :bg_image="'/../../../images/network/slider/mlm1.webp'" title="Best Online GST Billing Software in India" slogan="Create, manage & track invoices, e-invoices, and eWay bills, 100% safe, reliable, and secure..." />
+                <x-slider.home-slider :bg_image="'/../../../images/network/slider/policy.jpg'" title="Best Online GST Billing Software in India" slogan="Create, manage & track invoices, e-invoices, and eWay bills, 100% safe, reliable, and secure..." />
 
-                <x-slider.home-slider :bg_image="'/../../../images/network/slider/mlm2.webp'" title="Only GST Billing Software You Need For Your Business" slogan="Streamline your invoicing with GST billing software, effortlessly create GST-compliant invoices in minutes..." />
+                <x-slider.home-slider :bg_image="'/../../../images/network/slider/quality.jpg'" title="Only GST Billing Software You Need For Your Business" slogan="Streamline your invoicing with GST billing software, effortlessly create GST-compliant invoices in minutes..." />
 
 
 
-                <x-slider.home-slider :bg_image="'/../../../images/network/slider/mlm3.webp'" title="Book keeping and Transaction Recording" slogan="Categorized revenue, expenses, assets, liabilities, and other options.
+
+                <x-slider.home-slider :bg_image="'/../../../images/network/slider/relation.jpg'" title="Book keeping and Transaction Recording" slogan="Categorized revenue, expenses, assets, liabilities, and other options.
+
 
                             Further, reviewed in detail and adjusted according to the entries to ensure accuracy..." text_length="28" />
 
@@ -85,14 +87,16 @@
 
             <!-- Prev Button -------------------------------------------------------------------------------------->
             <button x-on:click="prev" @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()">
-                <x-icons.icon icon="chevrons-left" class="w-auto sm:h-12 h-7 block text-gray-300 hover:text-orange-500 rounded-xl hover:bg-orange-200 opacity-50 hover:opacity-100" />
+                <x-icons.icon icon="chevrons-left" class="w-auto sm:h-10 h-7 p-2 block text-gray-100 bg-gray-700 hover:text-white rounded-xl hover:bg-blue-600 opacity-50 hover:opacity-100" />
+
             </button>
 
 
             <!-- Next Button -------------------------------------------------------------------------------------->
 
             <button x-on:click="next" @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()">
-                <x-icons.icon icon="chevrons-right" class="w-auto sm:h-12 h-7 block text-gray-300 hover:text-orange-500 rounded-xl hover:bg-orange-200 opacity-50 hover:opacity-100" />
+                <x-icons.icon icon="chevrons-right" class="w-auto sm:h-10 h-7 p-2 block text-gray-100 bg-gray-700 hover:text-white rounded-xl hover:bg-red-600 opacity-50 hover:opacity-100" />
+
             </button>
         </div>
 

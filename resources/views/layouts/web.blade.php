@@ -16,11 +16,11 @@
     @livewireStyles
 </head>
 <body class="font-sans antialiased">
-    <div class="w-full">
+    <div class="w-full ">
         {{-- <x-menu.new/> --}}
         <x-menu.main />
 
-        <div class="w-full">
+        <div class="w-full ">
             {{ $slot }}
         </div>
     </div>
