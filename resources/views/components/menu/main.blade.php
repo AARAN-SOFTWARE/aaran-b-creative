@@ -1,4 +1,4 @@
-<div class="fixed z-50 w-full h-40 bg-white flex-col flex">
+<div class="relative z-50 w-full h-40 bg-white flex-col flex">
     <div class="bg-blue-900 h-1"></div>
     {{-- <div class="w-2/3 self-end h-16 bg-blue-900 transform "> --}}
 
