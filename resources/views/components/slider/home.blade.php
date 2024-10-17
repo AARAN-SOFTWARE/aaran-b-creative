@@ -50,7 +50,7 @@
         <div class="flex space-x-6">
 
 
-            <ul x-ref="slider" @scroll="updateCurrentSlide" class="flex w-full md:h-[45rem] h-52 overflow-x-hidden snap-x snap-mandatory">
+            <ul x-ref="slider" @scroll="updateCurrentSlide" class="flex w-full md:h-[40rem] h-52 overflow-x-hidden snap-x snap-mandatory">
 
                 {{-- @if($list) --}}
                 {{-- @forelse($list as $row)
@@ -61,8 +61,6 @@
                 <x-slider.home-slider :bg_image="'/../../../images/network/slider/policy.jpg'" title="Best Online GST Billing Software in India" slogan="Create, manage & track invoices, e-invoices, and eWay bills, 100% safe, reliable, and secure..." />
 
                 <x-slider.home-slider :bg_image="'/../../../images/network/slider/quality.jpg'" title="Only GST Billing Software You Need For Your Business" slogan="Streamline your invoicing with GST billing software, effortlessly create GST-compliant invoices in minutes..." />
-
-
 
 
                 <x-slider.home-slider :bg_image="'/../../../images/network/slider/relation.jpg'" title="Book keeping and Transaction Recording" slogan="Categorized revenue, expenses, assets, liabilities, and other options.
@@ -82,20 +80,16 @@
         </div>
 
         <!-- Prev / Next Buttons ---------------------------------------------------------------------------------->
-
         <div class="absolute z-10 flex justify-between w-full h-full px-4">
 
             <!-- Prev Button -------------------------------------------------------------------------------------->
             <button x-on:click="prev" @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()">
-                <x-icons.icon icon="chevrons-left" class="w-auto sm:h-10 h-7 p-2 block text-gray-100 bg-gray-700 hover:text-white rounded-xl hover:bg-blue-600 opacity-50 hover:opacity-100" />
-
+                <x-icons.icon icon="chevrons-left" class="block w-auto p-2 text-gray-100 bg-gray-700 opacity-50 sm:h-10 h-7 hover:text-white rounded-xl hover:bg-blue-600 hover:opacity-100" />
             </button>
-
-
             <!-- Next Button -------------------------------------------------------------------------------------->
 
             <button x-on:click="next" @mouseover="stopAutoSlide()" @mouseout="startAutoSlide()">
-                <x-icons.icon icon="chevrons-right" class="w-auto sm:h-10 h-7 p-2 block text-gray-100 bg-gray-700 hover:text-white rounded-xl hover:bg-red-600 opacity-50 hover:opacity-100" />
+                <x-icons.icon icon="chevrons-right" class="block w-auto p-2 text-gray-100 bg-gray-700 opacity-50 sm:h-10 h-7 hover:text-white rounded-xl hover:bg-red-600 hover:opacity-100" />
 
             </button>
         </div>
@@ -105,11 +99,9 @@
         <div class="absolute z-10 w-full bottom-3 lg:bottom-12">
             <div class="flex justify-center space-x-2">
                 <template x-for="(slide, index) in Array.from($refs.slider.children)" :key="index">
-                    <button @click="goToSlide(index)" :class="{'bg-gray-500': currentSlide === index, 'bg-bubble': currentSlide !== index}" class="w-3 h-1 rounded-full lg:w-3 lg:h-3 hover:bg-orange-400 bg-gray-400 focus:outline-none"></button>
+                    <button @click="goToSlide(index)" :class="{'bg-gray-500': currentSlide === index, 'bg-bubble': currentSlide !== index}" class="w-3 h-1 bg-gray-400 rounded-full lg:w-3 lg:h-3 hover:bg-orange-400 focus:outline-none"></button>
                 </template>
             </div>
         </div>
     </div>
-
-
 </div>
