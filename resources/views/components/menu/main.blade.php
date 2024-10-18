@@ -1,9 +1,9 @@
 <div class="relative z-50 flex flex-col w-full h-40 bg-white font-lex">
-    <div class="h-1 bg-[#055f73]"></div>
+    <div class="h-1 bg-[#F23030]"></div>
     {{-- <div class="self-end w-2/3 h-16 transform bg-[#055f73] "> --}}
 
     <div
-        class="self-end w-2/3 h-12 bg-[#055f73] flex justify-center gap-5 items-center [clip-path:polygon(0%_0%,_100%_0%,_100%_100%,_5%_100%)]">
+        class="self-end w-2/3 h-12 bg-[#F23030] flex justify-center gap-5 items-center [clip-path:polygon(0%_0%,_100%_0%,_100%_100%,_5%_100%)]">
         <div class="flex flex-row items-center justify-center text-sm font-semibold text-white gap-x-5">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="text-white size-4">
@@ -37,7 +37,8 @@
         <div class="flex flex-row items-center justify-between w-8/12">
 
             <div class="inline-flex items-center justify-center font-semibold text-gray-500 4/12 gap-x-5">
-                <span><img src="../../../../images/network/logo/abc.png" alt="" class="w-40 h-auto"></span>
+{{--                <span><img src="../../../../images/network/logo/abc.png" alt="" class="w-40 h-auto"></span>--}}
+                <x-assets.logo.aaran-creative class="w-28 h-auto block"/>
             </div>
 
             <div class="flex flex-row w-8/12 justify-evenly ">
@@ -68,7 +69,7 @@
                     </div>
                 </div>
 
-                <button class="px-8 py-2 text-white bg-[#f72585] rounded-br-2xl">
+                <button class="px-8 py-2 text-white bg-[#F23030] rounded-br-2xl">
                     Join now
                 </button>
             </div>
