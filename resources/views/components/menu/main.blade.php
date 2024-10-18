@@ -1,9 +1,8 @@
 <div class="relative z-50 flex flex-col w-full h-40 bg-white font-lex">
-    <div class="h-1 bg-[#F23030]"></div>
+    <div class="h-1 bg-[#1153D4]"></div>
     {{-- <div class="self-end w-2/3 h-16 transform bg-[#055f73] "> --}}
-
     <div
-        class="self-end w-2/3 h-12 bg-[#F23030] flex justify-center gap-5 items-center [clip-path:polygon(0%_0%,_100%_0%,_100%_100%,_5%_100%)]">
+        class="self-end w-2/3 h-12 bg-[#1153D4] flex justify-center gap-5 items-center [clip-path:polygon(0%_0%,_100%_0%,_100%_100%,_5%_100%)]">
         <div class="flex flex-row items-center justify-center text-sm font-semibold text-white gap-x-5">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="text-white size-4">
@@ -29,8 +28,6 @@
                     <path d="M36.8125 57.0766L57.7216 45.1821L36.8125 33.2871V57.0766Z" fill="navy" />
                 </svg>
             </span>
-
-
         </div>
     </div>
     <div class="flex items-center justify-center w-full h-16">
@@ -69,14 +66,13 @@
                     </div>
                 </div>
 
-                <button class="px-8 py-2 text-white bg-[#F23030] rounded-br-2xl">
+                <button class="px-8 py-2 text-white bg-[#1153D4] rounded-br-2xl">
                     Join now
                 </button>
             </div>
         </div>
     </div>
     <div class="absolute bottom-0 w-full h-1 bg-[#f72585]"></div>
-
     <div
         class="absolute -bottom-6 self-end w-2/3 h-16 bg-[#f72585] flex justify-center [clip-path:polygon(5%_0%,_100%_0%,_100%_100%,_0%_100%)]">
         <div class="flex flex-row items-center w-10/12 mx-auto text-sm font-bold text-white justify-evenly">
@@ -100,8 +96,5 @@
 
         </div>
     </div>
-
-
-
 </div>
 </div>
