@@ -1,13 +1,13 @@
 <div class="py-16 bg-slate-50">
     <div class="flex items-center w-10/12 mx-auto gap-5">
         <div class="w-1/2 space-y-5 flex-col flex gap-y-10 justify-evenly">
-            <div class="text-5xl font-semibold space-x-5"><span class="font-normal underline">Why</span><span
-                    class="text-blue-700">Choose Us</span></div>
+            <div class="text-5xl font-semibold space-x-5"><span class="font-normal underline text-gray-700">Why</span><span
+                    class="text-tangerine">Choose Us</span></div>
             <div>
                 <div class="grid grid-cols-2 gap-5">
                     <div class="flex items-start gap-x-5">
                         <div>
-                            <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1"
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
@@ -60,8 +60,8 @@
 </g>
 </svg>
                         </div>
-                        <div class="text-sm font-semibold space-y-2">
-                            <div class="text-red-600 font-semibold text-lg">Expert Team</div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine ">Expert Team</div>
                             <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn online. You can join this
                                 plan without spending a single penny
                             </div>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="flex items-start gap-x-5">
                         <div>
-                            <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1"
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
@@ -122,8 +122,8 @@
 </g>
 </svg>
                         </div>
-                        <div class="text-sm font-semibold space-y-2">
-                            <div class="text-red-600 font-semibold text-lg">Financial Consultancy</div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine">Financial Consultancy</div>
                             <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn online. You can join this
                                 plan without spending a single penny
                             </div>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="flex items-start gap-x-5">
                         <div>
-                            <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1"
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
@@ -184,8 +184,8 @@
 </g>
 </svg>
                         </div>
-                        <div class="text-sm font-semibold space-y-2">
-                            <div class="text-red-600 font-semibold text-lg">1500+ Team member</div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine">1500+ Team member</div>
                             <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn online. You can join this
                                 plan without spending a single penny
                             </div>
@@ -193,7 +193,7 @@
                     </div>
                     <div class="flex items-start gap-x-5">
                         <div>
-                            <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1"
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
@@ -246,8 +246,8 @@
 </g>
 </svg>
                         </div>
-                        <div class="text-sm font-semibold space-y-2">
-                            <div class="text-red-600 font-semibold text-lg">24x7 Support</div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine">24x7 Support</div>
                             <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn onlred You can join this text-lg
                                 plan without spending a single penny
                             </div>

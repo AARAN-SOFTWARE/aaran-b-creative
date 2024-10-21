@@ -19,7 +19,7 @@
                                         <div class="text-gray-600 text-md self-center font-semibold">John doe.</div>
                                         <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
                                     </div>
-                                    <div class="bg-red-600 text-white p-5 bg-red-600 rounded-md">
+                                    <div class="bg-tangerine text-white p-5 bg-red-600 rounded-md">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                              class="size-6">
                                             <path fill-rule="evenodd"
@@ -37,7 +37,7 @@
                                         <div class="text-gray-600 text-md self-center font-semibold">John doe.</div>
                                         <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
                                     </div>
-                                    <div class="bg-red-600 text-white p-5 bg-red-600 rounded-md">
+                                    <div class="bg-tangerine text-white p-5 bg-red-600 rounded-md">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                              class="size-6">
                                             <path fill-rule="evenodd"
@@ -55,7 +55,7 @@
                                         <div class="text-gray-600 text-xs self-center">Lorem ipsum.</div>
                                         <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
                                     </div>
-                                    <div class="bg-red-600 text-white p-5 bg-red-600 rounded-md">
+                                    <div class="bg-tangerine text-white p-5 bg-red-600 rounded-md">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                              class="size-6">
                                             <path fill-rule="evenodd"
@@ -73,7 +73,7 @@
                                         <div class="text-gray-600 text-xs self-center">Lorem ipsum.</div>
                                         <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
                                     </div>
-                                    <div class="bg-red-600 text-white p-5 bg-red-600 rounded-md">
+                                    <div class="bg-tangerine text-white p-5 bg-red-600 rounded-md">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                              class="size-6">
                                             <path fill-rule="evenodd"
@@ -91,13 +91,13 @@
                 {{--                <div class="swiper-pagination"></div>--}}
                 <!-- Add Navigation -->
                 <div
-                    class="w-auto absolute left-[300px] -top-24  bg-white rounded-md p-5 text-2xl underline text-red-600 font-semibold">
+                    class="w-auto absolute left-[300px] -top-24  bg-white rounded-md p-5 text-2xl underline text-tangerine font-semibold">
                     Our Top Acheivers
                 </div>
                 <div
-                    class="w-[5%] h-[15%] absolute right-[300px] -top-16 swiper-button-next bg-white/30 text-white rounded-md hover:bg-red-500"></div>
+                    class="w-[5%] h-[15%] absolute right-[300px] -top-16 swiper-button-next bg-white/30 text-white rounded-md hover:bg-tangerine"></div>
                 <div
-                    class="w-[5%] h-[15%] absolute left-[1250px] -top-16 swiper-button-prev bg-white/30 text-white rounded-md hover:bg-red-500"></div>
+                    class="w-[5%] h-[15%] absolute left-[1250px] -top-16 swiper-button-prev bg-white/30 text-white rounded-md hover:bg-tangerine"></div>
             </div>
         </div>
     </div>

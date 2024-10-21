@@ -57,11 +57,11 @@
             <div
                 class="w-7/12 mx-auto py-16 text-white text-center font-semibold flex-col flex gap-y-5 fade-in p-5 justify-center items-center rounded-md">
                 <div class="text-4xl  fade-in">We Ensure</div>
-                <div class="text-7xl font-bold fade-in"> COMMITMENT TO<span class="text-[#f72585]"> QUALITY</span></div>
+                <div class="text-7xl font-bold fade-in"> COMMITMENT TO<span class="text-[#FF613C]"> QUALITY</span></div>
                 <div class="text-2xl fade-in drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)]">Our company is a wonderful
                     plan to earn online. You can join this plan with easy Registration within a few minutes.
                 </div>
-                <a href="#" class="max-w-max mx-auto px-6 py-3 bg-[#f72585] rounded-lg fade-in">Get Started</a>
+                <a href="#" class="max-w-max mx-auto px-6 py-3 bg-[#FF613C] rounded-lg fade-in">Get Started</a>
             </div>
         </div>
         <!-- Slide 2 -->
@@ -70,11 +70,11 @@
                 <div
                     class="w-9/12 px-32 py-16 text-white text-center font-semibold flex-col flex gap-y-5 fade-in p-5 rounded-md justify-center">
                     <div class="text-4xl  fade-in">The Best</div>
-                    <div class="text-7xl font-bold fade-in">INVESTMENT <span class="text-[#f72585]">POLICY</span></div>
+                    <div class="text-7xl font-bold fade-in">INVESTMENT <span class="text-[#FF613C]">POLICY</span></div>
                     <div class="text-2xl fade-in drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)]">Our company is a wonderful
                         plan to earn online. You can join this plan with easy Registration within a few minutes.
                     </div>
-                    <a href="#" class="max-w-max mx-auto px-6 py-3 bg-[#f72585] rounded-lg fade-in">Get Started</a>
+                    <a href="#" class="max-w-max mx-auto px-6 py-3 bg-[#FF613C] rounded-lg fade-in">Get Started</a>
                 </div>
                 <div class="absolute bottom-0 right-0">
                     <img src="../../../../images/people.png" alt="" class="h-auto w-[25rem] fade-in">
@@ -87,11 +87,11 @@
                 <div
                     class="w-8/12 mx-16 p-16 text-white text-center font-semibold flex-col flex gap-y-5 fade-in p-5 rounded-md">
                     <div class="text-4xl  fade-in">We Give You</div>
-                    <div class="text-7xl font-bold fade-in">QUALITY <span class="text-[#f72585]">LIFE STYLE</span></div>
+                    <div class="text-7xl font-bold fade-in">QUALITY <span class="text-[#FF613C]">LIFE STYLE</span></div>
                     <div class="text-2xl fade-in drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)]">Our company is a wonderful
                         plan to earn online. You can join this plan with easy Registration within a few minutes.
                     </div>
-                    <a href="#" class="max-w-max mx-auto px-6 py-3 bg-[#f72585] rounded-lg fade-in">Get Started</a>
+                    <a href="#" class="max-w-max mx-auto px-6 py-3 bg-[#FF613C] rounded-lg fade-in">Get Started</a>
                 </div>
                 <div class="absolute bottom-0 -right-60 fade-in">
                     <img src="../../../../images/house-2.png" alt="" class="h-auto w-[38rem] fade-in">
@@ -102,7 +102,7 @@
 
     <!-- Navigation Buttons -->
     <button id="prev"
-            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-200 hover:bg-[#f72585] hover:text-white transition-all duration-300 ease-in-out  p-3 rounded-md">
+            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-200 hover:bg-[#FF613C] hover:text-white transition-all duration-300 ease-in-out  p-3 rounded-md">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
              class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/>
@@ -110,7 +110,7 @@
 
     </button>
     <button id="next"
-            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-200 hover:bg-[#f72585] hover:text-white transition-all duration-300 ease-in-out p-3 rounded-md">
+            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-200 hover:bg-[#FF613C] hover:text-white transition-all duration-300 ease-in-out p-3 rounded-md">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
         </svg>

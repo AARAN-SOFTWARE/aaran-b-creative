@@ -1,7 +1,10 @@
-<div class=" flex-col flex justify-center lg:h-96 h-auto bg-blue-950 pattern">
+<div class=" flex-col flex justify-center lg:h-96 h-auto bg-gray-800 pattern font-lex">
     <div class="w-9/12 mx-auto text-white flex gap-x-10">
         <div class="w-2/6 space-y-5">
-            <div class="w-full h-16 bg-white text-red-600 leading-loose">Company logo</div>
+            <div class="inline-flex items-center gap-x-2">
+                <x-assets.logo.aaran-creative class="w-10 h-auto block"/>
+                <span class="text-2xl text-white font-semibold">Aaran Business Creative</span>
+            </div>
             <div>A wonderful serenity taken possession into entire soul like to these sweet of tence this spot which was
                 the
                 main part created the bliss often souls like mine.
@@ -21,20 +24,20 @@
         </div>
         <div class="w-4/6 flex justify-between">
             <div class="space-y-5 font-semibold">
-                <div class="text-2xl underline">Our Services</div>
+                <div class="text-2xl underline underline-offset-4 text-tangerine decoration-tangerine">Our Services</div>
                 <div>Invest Planning</div>
                 <div>Financial Consultancy</div>
                 <div>Online Banking & Loans</div>
                 <div>Consultancy</div>
             </div>
             <div class="space-y-5 font-semibold">
-                <div class="text-2xl underline">Our Services</div>
+                <div class="text-2xl underline underline-offset-4 text-tangerine decoration-tangerine">Our Services</div>
                 <div>How can I measure temperature</div>
                 <div>How can I measure temperature</div>
                 <div>How can I measure temperature</div>
             </div>
             <div class="space-y-5 font-semibold">
-                <div class="text-2xl underline">Our Services</div>
+                <div class="text-2xl underline underline-offset-4 text-tangerine decoration-tangerine">Our Services</div>
                 <div>Lorem ipsum.</div>
                 <div>Lorem ipsum.</div>
                 <div>Lorem ipsum.</div>

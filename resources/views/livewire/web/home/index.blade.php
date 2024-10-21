@@ -8,5 +8,4 @@
     <x-web.home.letter />
     <x-web.home.footer-address/>
     <x-web.home.copyright/>
-
 </div>
