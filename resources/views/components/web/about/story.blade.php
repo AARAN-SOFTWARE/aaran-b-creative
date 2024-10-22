@@ -1,5 +1,6 @@
 <div class="font-lex space-y-10 py-16">
-    <div class="w-7/12 mx-auto text-7xl text-gray-800 font-semibold text-center hover:underline hover:decoration-tangerine duration-500 ease-in-out transition-all">
+    <div
+        class="w-7/12 mx-auto text-7xl text-gray-800 font-semibold text-center hover:underline hover:decoration-tangerine duration-500 ease-in-out transition-all">
         We think our story is worth sharing with you
     </div>
     <div class="w-9/12 text-center text-xl text-gray-600 mx-auto font-semibold">
@@ -48,101 +49,133 @@
             <div class="space-y-2 text-gray-700 text-md font-semibold">
                 <div class="text-2xl text-black semibold font-semibold">Empowering Lives Through Opportunity</div>
                 <div class="text-md ">At Aaran Business Creative, our main Main to:</div>
-                <div class="flex justify-center items-center gap-x-2">
+                <div class="flex justify-center items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                              class="size-5 fill-tangerine">
                             <path fill-rule="evenodd"
                                   d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
                                   clip-rule="evenodd"/>
                         </svg>
+                    </div>
                     <span>Empower Individuals: Enable everyone to achieve financial independence and personal growth.</span>
                 </div>
-                <div class="flex justify-center items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-center items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Build a Thriving Community: Foster a supportive network where members uplift and inspire one another.</span>
                 </div>
-                <div class="flex justify-center items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-center items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Promote Financial Freedom: Provide the tools and resources necessary for sustainable income and success.</span>
                 </div>
-                <div class="flex justify-start items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-start items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Uphold Integrity: Maintain transparency and trust in all our operations.</span>
                 </div>
-                <div class="flex justify-center items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-center items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Encourage Continuous Learning: Equip our members with knowledge to stay ahead in an evolving marketplace.</span>
                 </div>
             </div>
         </div>
         <div class="w-1/2 space-y-2">
-            <div class="text-3xl semibold font-semibold underline decoration-tangerine decoration underline-offset-4">Our main Mission</div>
+            <div class="text-3xl semibold font-semibold underline decoration-tangerine decoration underline-offset-4">
+                Our main Mission
+            </div>
             <div class="space-y-2 text-gray-700 text-md font-semibold">
-                <div class="text-2xl text-black semibold font-semibold">Empowering Financial Freedom Through Community Collaboration</div>
+                <div class="text-2xl text-black semibold font-semibold">Empowering Financial Freedom Through Community
+                    Collaboration
+                </div>
                 <div>At Aaran Business Creative, our vision to:</div>
-                <div class="flex justify-center items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-center items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Empower Financial Independence: Equip members with the tools and knowledge to build sustainable income.</span>
                 </div>
-                <div class="flex justify-center items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-center items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Foster Community Support: Create a collaborative environment where everyone uplifts each other.</span>
                 </div>
-                <div class="flex justify-center items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-center items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Promote Personal Development: Provide training and mentorship for growth in skills and leadership.</span>
                 </div>
-                <div class="flex justify-start items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-start items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Uphold Integrity: Ensure transparency and fairness in all our practices.</span>
                 </div>
-                <div class="flex justify-start items-center gap-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                         class="size-5 fill-tangerine">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
-                              clip-rule="evenodd"/>
-                    </svg>
+                <div class="flex justify-start items-center gap-x-5">
+                    <div class="w-5 h-5 pt-1 flex justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                             class="size-5 fill-tangerine">
+                            <path fill-rule="evenodd"
+                                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.536-4.464a.75.75 0 1 0-1.061-1.061 3.5 3.5 0 0 1-4.95 0 .75.75 0 0 0-1.06 1.06 5 5 0 0 0 7.07 0ZM9 8.5c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S7.448 7 8 7s1 .672 1 1.5Zm3 1.5c.552 0 1-.672 1-1.5S12.552 7 12 7s-1 .672-1 1.5.448 1.5 1 1.5Z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
                     <span>Drive Sustainable Growth: Focus on ethical practices for long-term success.</span>
                 </div>
             </div>
