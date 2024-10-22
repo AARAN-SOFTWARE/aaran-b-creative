@@ -92,23 +92,49 @@
     <div
         class="absolute -bottom-6 self-end w-2/3 h-16 bg-[#FF613C] flex justify-center [clip-path:polygon(5%_0%,_100%_0%,_100%_100%,_0%_100%)]">
         <div class="flex flex-row items-center w-10/12 mx-auto text-sm font-bold text-white justify-evenly">
-            <a href="{{ route('home') }}">HOME</a>
-            <a href=" {{ route('about') }} ">ABOUT</a>
-            <div>OUR PRODUCTS</div>
-            <a href=" {{ route('service') }} ">SERVICE</a>
-            <a href="{{ route('contact') }}">CONTACT</a>
+            <a href="{{ route('home') }}" class="relative inline-block no-underline group">
+                HOME
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+            </a>
+            <a href="{{ route('about') }}" class="relative inline-block no-underline group">
+                ABOUT
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+            </a>
+            <a href="{{ route('product') }}" class="relative inline-block no-underline group">
+                OUR PRODUCT
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+            </a>
+            <a href="{{ route('service') }}" class="relative inline-block no-underline group">
+                SERVICE
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+            </a>
+            <a href="{{ route('contact') }}" class="relative inline-block no-underline group">
+                CONTACT
+                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+            </a>
             @if (Route::has('login'))
                 @auth
-                    <a href=" {{ route('dashboard') }} ">DASHBOARD</a>
-                    <a href=" {{ route('logout') }} "
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">LOGOUT</a>
+                    <a href="{{ route('dashboard') }}" class="relative inline-block no-underline group">
+                        DASHBOARD
+                        <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+                    </a>
+                    <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="relative inline-block no-underline group">
+                        LOGOUT
+                        <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+                    </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                           style="display: none;">
                         @csrf
                     </form>
                 @else
-                    <a href="{{ route('login') }}">LOGIN</a>
-                    <a href="{{ route('register') }} }}">REGISTER</a>
+                    <a href="{{ route('login') }}" class="relative inline-block no-underline group">
+                        LOGIN
+                        <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+                    </a>
+                    <a href="{{ route('register') }}" class="relative inline-block no-underline group">
+                        REGISTER
+                        <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
+                    </a>
                 @endauth
             @endif
 
