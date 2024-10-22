@@ -1,13 +1,15 @@
-<div class="py-16">
-<div class="flex items-center w-10/12 mx-auto gap-5">
-    <div class="space-y-5 flex-col flex gap-y-10 justify-evenly">
-        <div class="text-5xl font-semibold"><span class="font-normal underline">Why</span> Choose Us</div>
-        <div>
-            <div class="grid grid-cols-2 gap-5">
-                <div class="flex items-start gap-x-5">
-                    <div>
-                    <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                         viewBox="0 0 381.164 381.164" xml:space="preserve">
+<div class="py-16 bg-slate-50">
+    <div class="flex items-center w-10/12 mx-auto gap-5">
+        <div class="w-1/2 space-y-5 flex-col flex gap-y-10 justify-evenly">
+            <div class="text-5xl font-semibold space-x-5"><span class="font-normal underline text-gray-700">Why</span><span
+                    class="text-tangerine">Choose Us</span></div>
+            <div>
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="flex items-start gap-x-5">
+                        <div>
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
     <path d="M190.582,197.203c24.125,0,80.846-29.033,80.846-98.602c0-9.704-0.236-19.078-1.036-27.935
 		c-1.313-17.432-4.883-32.88-13.773-44.72C245.218,9.836,225.268,0,190.582,0c-34.68,0-54.628,9.833-66.029,25.937
@@ -57,16 +59,19 @@
 		C203.685,326.938,199.059,322.752,194.995,318.211z"/>
 </g>
 </svg>
+                        </div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine ">Expert Team</div>
+                            <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn online. You can join this
+                                plan without spending a single penny
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-sm font-semibold">
-                        <div >Expert Team</div>
-                        <div class="text-gray-600">Our company is a wonderful plan to earn online. You can join this plan without spending a single penny</div>
-                    </div>
-                </div>
-                <div class="flex items-start gap-x-5">
-                    <div>
-                        <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                             viewBox="0 0 381.164 381.164" xml:space="preserve">
+                    <div class="flex items-start gap-x-5">
+                        <div>
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
     <path d="M190.582,197.203c24.125,0,80.846-29.033,80.846-98.602c0-9.704-0.236-19.078-1.036-27.935
 		c-1.313-17.432-4.883-32.88-13.773-44.72C245.218,9.836,225.268,0,190.582,0c-34.68,0-54.628,9.833-66.029,25.937
@@ -116,16 +121,19 @@
 		C203.685,326.938,199.059,322.752,194.995,318.211z"/>
 </g>
 </svg>
+                        </div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine">Financial Consultancy</div>
+                            <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn online. You can join this
+                                plan without spending a single penny
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-sm font-semibold">
-                        <div >Expert Team</div>
-                        <div class="text-gray-600">Our company is a wonderful plan to earn online. You can join this plan without spending a single penny</div>
-                    </div>
-                </div>
-                <div class="flex items-start gap-x-5">
-                    <div>
-                        <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                             viewBox="0 0 381.164 381.164" xml:space="preserve">
+                    <div class="flex items-start gap-x-5">
+                        <div>
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
     <path d="M190.582,197.203c24.125,0,80.846-29.033,80.846-98.602c0-9.704-0.236-19.078-1.036-27.935
 		c-1.313-17.432-4.883-32.88-13.773-44.72C245.218,9.836,225.268,0,190.582,0c-34.68,0-54.628,9.833-66.029,25.937
@@ -175,16 +183,19 @@
 		C203.685,326.938,199.059,322.752,194.995,318.211z"/>
 </g>
 </svg>
+                        </div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine">1500+ Team member</div>
+                            <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn online. You can join this
+                                plan without spending a single penny
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-sm font-semibold">
-                        <div >Expert Team</div>
-                        <div class="text-gray-600">Our company is a wonderful plan to earn online. You can join this plan without spending a single penny</div>
-                    </div>
-                </div>
-                <div class="flex items-start gap-x-5">
-                    <div>
-                        <svg fill="" class="w-16 h-16 fill-blue-700" height="" width="" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                             viewBox="0 0 381.164 381.164" xml:space="preserve">
+                    <div class="flex items-start gap-x-5">
+                        <div>
+                            <svg fill="" class="w-16 h-16 fill-gray-700" height="" width="" version="1.1" id="Capa_1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 381.164 381.164" xml:space="preserve">
 <g>
     <path d="M190.582,197.203c24.125,0,80.846-29.033,80.846-98.602c0-9.704-0.236-19.078-1.036-27.935
 		c-1.313-17.432-4.883-32.88-13.773-44.72C245.218,9.836,225.268,0,190.582,0c-34.68,0-54.628,9.833-66.029,25.937
@@ -234,18 +245,70 @@
 		C203.685,326.938,199.059,322.752,194.995,318.211z"/>
 </g>
 </svg>
-                    </div>
-                    <div class="text-sm font-semibold">
-                        <div >Expert Team</div>
-                        <div class="text-gray-600">Our company is a wonderful plan to earn online. You can join this plan without spending a single penny</div>
+                        </div>
+                        <div class="text-sm font-semibold space-y-2 group">
+                            <div class="text-tangerine font-semibold text-lg group-hover:underline decoration-tangerine">24x7 Support</div>
+                            <div class="text-gray-600 leading-loose">Our company is a wonderful plan to earn onlred You can join this text-lg
+                                plan without spending a single penny
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="overflow-hidden " style=" border-radius: 33% 67% 38% 62% / 52% 44% 56% 48%;
-background-color: #000000">
-        <img src="../../../../images/wall1.webp" alt="" cla>
+        <div class="w-1/2 h-auto relative overflow-hidden">
+            <div class="swiper-container w-1/3 h-96">
+                <div class="swiper-wrapper">
+                    @for($i=1; $i<=20; $i++)
+                        <div class="swiper-slide flex flex-col items-start bg-white rounded-lg p-4 text-center">
+                            <img src="../../../../images/wall1.webp" alt="Image 1"
+                                 class="rounded-lg mb-4 w-full h-full object-cover">
+                            <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                        <div class="swiper-slide flex flex-col items-start bg-white rounded-lg p-4">
+                            <img src="../../../../images/wall2.webp" alt="Image 1"
+                                 class="rounded-lg mb-4 w-full h-full object-cover ">
+                            <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                        <div class="swiper-slide flex flex-col items-start bg-white rounded-lg p-4">
+                            <img src="../../../../images/wall3.webp" alt="Image 1"
+                                 class="rounded-lg mb-4 w-full h-full object-cover">
+                            <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                        <div class="swiper-slide flex flex-col items-start bg-white rounded-lg p-4">
+                            <img src="../../../../images/wall4.webp" alt="Image 1"
+                                 class="rounded-lg mb-4 w-full h-full object-cover">
+                            <div class="text-gray-600 text-xs self-center">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                    @endfor
+                </div>
+                <!-- Add Pagination -->
+{{--                <div class="swiper-pagination"></div>--}}
+                <!-- Add Navigation -->
+                {{--            <div class="swiper-button-next"></div>--}}
+                {{--            <div class="swiper-button-prev"></div>--}}
+            </div>
+        </div>
     </div>
 </div>
-</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        effect: 'slide', // Change this to 'fade' or other effects as needed
+        speed: 900, // Transition speed
+    });
+</script>

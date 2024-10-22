@@ -1,7 +1,7 @@
-<div class="bg-[#1a1a1a]">
+<div class="bg-tangerine font-lex">
     <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-        <span class="text-gray-50 text-xs text-center sm:text-left">
-            <a class="text-gray-50 hover:text-amber-600 cursor-pointer">Aaran info Tech</a>
+        <span class="text-gray-50 text-xs text-center sm:text-left font-semibold">
+            <a class="text-gray-50 hover:text-amber-600 cursor-pointer">Aaran Business Creative</a>
             © 2020 - 2024 — All Rights Reserved.
         </span>
 

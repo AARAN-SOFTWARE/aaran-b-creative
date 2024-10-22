@@ -31,7 +31,12 @@ export default {
             },
             screens: {
                 'print': { 'raw': 'print' },
-            }
+            },
+            colors: {
+                transparent: 'transparent',
+                current: 'currentColor',
+                'tangerine': '#FF613C',
+            },
         },
     },
 
