@@ -5,8 +5,8 @@
             style="background-image: url('../../../images/bg-9.jpg');">
         </div>
         <div class="absolute top-0 w-full text-center py-20 space-y-5">
-            <div class="text-9xl text-white font-semibold">About Us</div>
-            <div class="text-2xl text-white font-semibold drop-shadow-2xl">A Journey of Growth and Discovery.</div>
+            <div class="text-9xl text-white font-semibold">{{$title}}</div>
+            <div class="text-2xl text-white font-semibold drop-shadow-2xl">{{$tagline}}</div>
         </div>
     </div>
 </div>
