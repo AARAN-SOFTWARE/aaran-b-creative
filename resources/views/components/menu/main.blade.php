@@ -1,4 +1,4 @@
-<div class="relative z-50 flex flex-col w-full h-40 bg-white font-lex">
+<div class="relative z-10 flex flex-col w-full h-40 bg-white font-lex">
     <!--
     black , green[#684DF4]
     black , violet[#684DF4]
