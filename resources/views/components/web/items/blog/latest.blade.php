@@ -9,8 +9,8 @@
                     <img src="../../../../images/wall1.webp" alt="" class="h-24 object-cover">
                 </div>
                 <div class="w-2/3 space-y-2">
-                    <a class="text-md uppercase tracking-wider font-merri line-clamp-2 text-gray-700 hover:text-orange-700 transition-all duration-500 ease-in-out cursor-pointer">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Assumenda, quidem?
+                    <a class="text-md uppercase tracking-wider font-merri line-clamp-2 text-gray-700 hover:text-orange-700
+                    transition-all duration-500 ease-in-out cursor-pointer">Lorem ipsum dolor Lorem ipsum Lorem ipsum dolor sit amet, consectetur..
                     </a>
                     <div class="text-xs text-orange-700">09 JUNE 2024</div>
                 </div>

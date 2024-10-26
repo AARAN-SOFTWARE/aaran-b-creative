@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Livewire\Web\Home;
+namespace App\Livewire\BlogPost;
 
+
+use Aaran\Blog\Models\BlogPost;
 use Aaran\Blog\Models\BlogTag;
-use Aaran\Blog\Models\Post;
 use Aaran\Common\Models\Common;
-use Aaran\Common\Models\Label;
 use App\Livewire\Trait\CommonTraitNew;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
-use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Blog extends Component
 {
+
     use CommonTraitNew;
     use WithFileUploads;
 
@@ -30,63 +30,38 @@ class Blog extends Component
     public $visibility = false;
     #endregion
 
-    public function rules(): array
-    {
-        return [
-            'common.vname' => 'required|min:3|max:75',
-            'body' => 'required|min:10|',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'common.vname.required' => ' :attribute is required.',
-            'body.required' => ' :attribute is required.',
-        ];
-    }
-
-    public function validationAttributes()
-    {
-        return [
-            'common.vname' => 'User name',
-            'body' => 'Description',
-        ];
-    }
     public function mount()
     {
         $this->BlogCategories = Common::where('label_id','=','18')->get();
     }
-
     #region[Get-Save]
     public function getSave(): void
     {
-        $this->validate($this->rules());
         if ($this->common->vname != '') {
             if ($this->common->vid == '') {
-                $Post = new Post();
+                $BlogPost = new BlogPost();
                 $extraFields = [
                     'body' => $this->body,
-                    'blogcategory_id' => $this->blogcategory_id?:104,
-                    'blogtag_id' => $this->blogtag_id?:1,
+                    'blogcategory_id' => $this->blogcategory_id,
+                    'blogtag_id' => $this->blogtag_id,
                     'image' => $this->saveImage(),
                     'user_id' => auth()->id(),
                     'visibility' => $this->visibility,
 
                 ];
-                $this->common->save($Post, $extraFields);
+                $this->common->save($BlogPost, $extraFields);
                 $message = "Saved";
             } else {
-                $Post = Post::find($this->common->vid);
+                $BlogPost = BlogPost::find($this->common->vid);
                 $extraFields = [
                     'body' => $this->body,
-                    'blogcategory_id' => $this->blogcategory_id?:104,
-                    'blogtag_id' => $this->blogtag_id?:1,
+                    'blogcategory_id' => $this->blogcategory_id,
+                    'blogtag_id' => $this->blogtag_id,
                     'image' => $this->saveImage(),
                     'user_id' => auth()->id(),
                     'visibility' => $this->visibility,
                 ];
-                $this->common->edit($Post, $extraFields);
+                $this->common->edit($BlogPost, $extraFields);
                 $message = "Updated";
             }
             $this->dispatch('notify', ...['type' => 'success', 'content' => $message . ' Successfully']);
@@ -98,18 +73,18 @@ class Blog extends Component
     public function getObj($id)
     {
         if ($id) {
-            $Post = Post::find($id);
-            $this->common->vid = $Post->id;
-            $this->common->vname = $Post->vname;
-            $this->body = $Post->body;
-            $this->blogcategory_id = $Post->blogcategory_id;
-            $this->blogcategory_name = $Post->blogcategory_id?Common::find($Post->blogcategory_id)->vname:'';
-            $this->blogtag_id = $Post->blogtag_id;
-            $this->blogtag_name = $Post->blogtag_id?Common::find($Post->blogtag_id)->vname:'';
-            $this->common->active_id = $Post->active_id;
-            $this->old_image = $Post->image;
-            $this->visibility = $Post->visibility;
-            return $Post;
+            $BlogPost = BlogPost::find($id);
+            $this->common->vid = $BlogPost->id;
+            $this->common->vname = $BlogPost->vname;
+            $this->body = $BlogPost->body;
+            $this->blogcategory_id = $BlogPost->blogcategory_id;
+            $this->blogcategory_name = $BlogPost->blogcategory_id?Common::find($BlogPost->blogcategory_id)->vname:'';
+            $this->blogtag_id = $BlogPost->blogtag_id;
+            $this->blogtag_name = $BlogPost->blogtag_id?Common::find($BlogPost->blogtag_id)->vname:'';
+            $this->common->active_id = $BlogPost->active_id;
+            $this->old_image = $BlogPost->image;
+            $this->visibility = $BlogPost->visibility;
+            return $BlogPost;
         }
         return null;
     }
@@ -144,7 +119,7 @@ class Blog extends Component
                 Storage::disk('public')->delete(Storage::path('public/images/' . $this->old_image));
             }
 
-            $image->storeAs('public/images', $filename);
+            $image->storeAs('images', $filename,'public');
 
             return $filename;
 
@@ -165,15 +140,10 @@ class Blog extends Component
     public $highlightBlogCategory = 0;
     public $blogcategoryTyped = false;
 
-//    public function mount()
-//    {
-//        $this->BlogCategories = Common::where('label_id', '=', '18')->get();
-//    }
-
     public function decrementBlogcategory(): void
     {
         if ($this->highlightBlogcategory === 0) {
-            $this->highlightBlogCategory = count($this->blogcategoryCollection) - 1;
+            $this->highlightBlogcategory = count($this->blogcategoryCollection) - 1;
             return;
         }
         $this->highlightBlogcategory--;
@@ -182,7 +152,7 @@ class Blog extends Component
     public function incrementBlogcategory(): void
     {
         if ($this->highlightBlogcategory === count($this->blogcategoryCollection) - 1) {
-            $this->highlightBlogCategory = 0;
+            $this->highlightBlogcategory = 0;
             return;
         }
         $this->highlightBlogcategory++;
@@ -201,7 +171,7 @@ class Blog extends Component
 
         $this->blogcategory_name = '';
         $this->blogcategoryCollection = Collection::empty();
-        $this->highlightBlogCategory = 0;
+        $this->highlightBlogcategory = 0;
 
         $this->blogcategory_name = $obj['vname'] ?? '';
         $this->blogcategory_id = $obj['id'] ?? '';
@@ -217,7 +187,7 @@ class Blog extends Component
     public function blogcategorySave($name)
     {
         $obj = Common::create([
-            'label_id' => 18,
+            'label_id' => 2,
             'vname' => $name,
             'active_id' => '1'
         ]);
@@ -228,8 +198,8 @@ class Blog extends Component
     public function getBlogcategoryList(): void
     {
         $this->blogcategoryCollection = $this->blogcategory_name ?
-            Common::search(trim($this->blogcategory_name))->where('label_id', '=', '18')->get() :
-            Common::where('label_id', '=', '18')->get();
+            Common::search(trim($this->blogcategory_name))->where('label_id', '=', '2')->get() :
+            Common::where('label_id', '=', '2')->get();
     }
 
     #endregion
@@ -318,14 +288,14 @@ class Blog extends Component
 
     public function getFilter($id)
     {
-        if (!in_array($id, $this->tagfilter, true)) {
+        if (!in_array($id,$this->tagfilter,true)) {
             return array_push($this->tagfilter, $id);
         }
     }
 
     public function clearFilter()
     {
-        $this->tagfilter = [];
+        $this->tagfilter=[];
     }
 
     public function removeFilter($id)
@@ -337,25 +307,29 @@ class Blog extends Component
     #region[Render]
     public function getRoute()
     {
-        return route('blog');
+        return route('blog-post');
     }
-
     public function render()
     {
         $this->getBlogcategoryList();
         $this->getBlogtagList();
 
-        $this->getListForm->perPage = 6;
-        return view('livewire.web.home.blog')->layout('layouts.web')->with([
-            'list' => $this->getListForm->getList(Post::class, function ($query) {
-                return $query->latest()->whereIN('visibility', session()->get('tenant_id') ? [0, 1] : [1])
-                    ->when($this->tagfilter, function ($query, $tagfilter) {
-                        return $query->whereIn('blogtag_id', $tagfilter);
-                    });
+        return view('livewire.blog-post.blog')->layout('layouts.web')->with([
+            'list' => $this ->getListForm ->getList(BlogPost::class,function ($query){
+                return $query->latest()->when($this->tagfilter,function ($query,$tagfilter){
+                    return $query->whereIn('blogtag_id',$tagfilter);
+                });
             }),
-            'topPost' => Post::take(4)->whereIN('visibility', session()->get('tenant_id') ? [0, 1] : [1])->when($this->tagfilter, function ($query, $tagfilter) {
-                return $query->whereIn('blogtag_id', $tagfilter);
+            'firstPost'=>BlogPost::latest()->take(1)->when($this->tagfilter,function ($query,$tagfilter){
+                return $query->whereIn('blogtag_id',$tagfilter);
             })->get(),
         ]);
     }
+    #endregion
+
+
+//    public function render()
+//    {
+//        return view('livewire.blog-post.blog')->layout('layouts.web');
+//    }
 }
