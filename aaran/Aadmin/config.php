@@ -20,7 +20,7 @@ return [
         ['menu' => 'home', 'link' => 'home'],
         ['menu' => 'Gallery', 'link' => 'gallery'],
         ['menu' => 'News', 'link' => 'news'],
-        ['menu' => 'Blog', 'link' => 'feed'],
+        ['menu' => 'HomeBlog', 'link' => 'feed'],
         ['menu' => 'About', 'link' => 'sportAbout'],
         ['menu' => 'Contact', 'link' => 'sportContact'],
     ]

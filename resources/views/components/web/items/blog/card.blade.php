@@ -1,31 +1,37 @@
+@props([
+    'list' => null,
+])
+    @foreach($list as $row)
 <div class="bg-white rounded-2xl">
-    <div class="relative">
-        <img src="../../../../images/wall1.webp" alt="" class="w-full h-[24rem] rounded-t-2xl">
-        <div
-            class="max-w-max bg-orange-600 text-xs text-white px-2 py-1 rounded absolute top-6 left-6 shadow-sm shadow-gray-900">
-            Tags
-        </div>
-    </div>
-    <div class="pt-12  space-y-5 ">
-        <div class="px-5 font-semibold text-[10px] text-orange-700">07 JUN 2016</div>
-        <div class="px-5 uppercase font-merri text-2xl tracking-wider">Lorem ipsum dolor sit amet.</div>
-        <div class="px-5 text-xs text-gray-400 leading-loose tracking-wider">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolore exercitationem
-            maiores nihil sapiente! Alias <a href="#">aliquid</a> architecto dolor fuga in itaque magnam maxime, minus,
-            mollitia rem suscipit velit
-            <a href="" class="inline-flex items-center ">
-                <span>&nbsp;</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3.5 ">
-                    <path fill-rule="evenodd"
-                          d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
-                          clip-rule="evenodd"/>
-                </svg>
-            </a>
 
+        <div class="relative">
+            <img src="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$row->image) }}" alt="" class="w-full h-[24rem] rounded-t-2xl">
+            <div
+                class="max-w-max bg-orange-600 text-xs text-white px-2 py-1 rounded absolute top-6 left-6 shadow-sm shadow-gray-900">
+                {{ \Aaran\Blog\Models\BlogPost::tagName($row->blogtag_id) ?: 'posts'}}
+            </div>
         </div>
-        <div class="px-5 text-xs border-t py-5 flex justify-between items-center">
-            <span class="text-gray-500">Post By - <span class="text-orange-700 font-normal">Admin</span></span>
-            <span class="inline-flex items-center space-x-4">
+
+        <div class="pt-12  space-y-5 ">
+            <div class="px-5 font-semibold text-[10px] text-orange-700">{{ $row->created_at->diffForHumans() }}</div>
+            <div class="px-5 uppercase font-merri text-2xl tracking-wider">{{\Illuminate\Support\Str::words($row->vname,10)}}</div>
+            <div class="px-5 text-xs text-gray-400 leading-loose tracking-wider">
+                {{\Illuminate\Support\Str::words($row->body,26)}}
+
+                <a href="" class="inline-flex items-center ">
+                    <span>&nbsp;</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3.5 ">
+                        <path fill-rule="evenodd"
+                              d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </a>
+
+            </div>
+
+            <div class="px-5 text-xs border-t py-5 flex justify-between items-center">
+                <span class="text-gray-500">Post By - <span class="text-orange-700 font-normal">{{$row->user->name,10}}</span></span>
+                <span class="inline-flex items-center space-x-4">
                             <span>
                                 <svg width="" height="" viewBox="0 0 90 90" fill="none"
                                      xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4 ">
@@ -79,6 +85,7 @@
 
 
                         </span>
+            </div>
         </div>
-    </div>
 </div>
+    @endforeach
