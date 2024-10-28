@@ -104,10 +104,10 @@
                 BLOG
                 <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
             </a>
-            <a href="{{ route('product') }}" class="relative inline-block no-underline group">
-                OUR PRODUCT
-                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
-            </a>
+{{--            <a href="{{ route('product') }}" class="relative inline-block no-underline group">--}}
+{{--                OUR PRODUCT--}}
+{{--                <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>--}}
+{{--            </a>--}}
             <a href="{{ route('service') }}" class="relative inline-block no-underline group">
                 SERVICE
                 <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>

@@ -8,6 +8,7 @@ Route::get('/about', App\Livewire\Web\Home\About::class)->name('about');
 Route::get('/product', App\Livewire\Web\Home\Product::class)->name('product');
 Route::get('/contact', App\Livewire\Web\Home\Contact::class)->name('contact');
 Route::get('/blog-post', App\Livewire\BlogPost\Blog::class)->name('blog-post');
+Route::get('/blog-post/{id}/show', App\Livewire\BlogPost\Blogshow::class)->name('blog-post.show');
 Route::get('/service', App\Livewire\Web\Home\Service::class)->name('service');
 Route::get('/info', App\Livewire\Web\Home\Info::class)->name('info');
 
