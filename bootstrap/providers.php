@@ -11,4 +11,6 @@ return [
     Aaran\Web\Providers\WebServiceProvider::class,
     Aaran\Common\Providers\CommonServiceProvider::class,
 
+    Aaran\Blog\Providers\BlogServiceProvider::class,
+
 ];

@@ -100,7 +100,7 @@
                 ABOUT
                 <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
             </a>
-            <a href="{{ route('blog') }}" class="relative inline-block no-underline group">
+            <a href="{{ route('blog-post') }}" class="relative inline-block no-underline group">
                 BLOG
                 <span class="absolute left-0 -bottom-2 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
             </a>

@@ -52,7 +52,7 @@ class Customise
 
     #endregion
 
-    #region[Blog]
+    #region[HomeBlog]
     public static function hasBlog(): bool
     {
         return static::enabled(static::blog());
@@ -60,7 +60,7 @@ class Customise
 
     public static function blog(): string
     {
-        return 'blog';
+        return 'blog-post';
     }
 
     #endregion

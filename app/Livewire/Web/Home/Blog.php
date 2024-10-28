@@ -14,6 +14,6 @@ class Blog extends Component
 {
     public function render()
     {
-        return view('livewire.web.home.blog')->layout('layouts.web');
+        return view('livewire.web.home.blog-post')->layout('layouts.web');
     }
 }

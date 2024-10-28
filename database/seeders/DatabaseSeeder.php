@@ -15,5 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         S03_UserSeeder::run();
+
+        S101_LabelSeeder::run();
+        S102_CommonSeeder::run();
     }
 }
