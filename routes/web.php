@@ -22,5 +22,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/icons', App\Livewire\Utilities\Icon\Index::class)->name('icons');
     Route::get('/test', App\Livewire\Test\Index::class)->name('test');
     Route::get('/tree', App\Livewire\Network\Tree\Index::class)->name('tree');
+    Route::get('blogTags',App\Livewire\BlogPost\BlogTag::class)->name('blogTags');
+
 });
 

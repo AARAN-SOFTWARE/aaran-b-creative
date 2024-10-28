@@ -32,7 +32,7 @@ class Blog extends Component
 
     public function mount()
     {
-        $this->BlogCategories = Common::where('label_id','=','18')->get();
+        $this->BlogCategories = Common::where('label_id','=','2')->get();
     }
     #region[Get-Save]
     public function getSave(): void
@@ -143,7 +143,7 @@ class Blog extends Component
     public function decrementBlogcategory(): void
     {
         if ($this->highlightBlogcategory === 0) {
-            $this->highlightBlogcategory = count($this->blogcategoryCollection) - 1;
+            $this->highlightBlogCategory = count($this->blogcategoryCollection) - 1;
             return;
         }
         $this->highlightBlogcategory--;
@@ -152,7 +152,7 @@ class Blog extends Component
     public function incrementBlogcategory(): void
     {
         if ($this->highlightBlogcategory === count($this->blogcategoryCollection) - 1) {
-            $this->highlightBlogcategory = 0;
+            $this->highlightBlogCategory = 0;
             return;
         }
         $this->highlightBlogcategory++;
@@ -171,7 +171,7 @@ class Blog extends Component
 
         $this->blogcategory_name = '';
         $this->blogcategoryCollection = Collection::empty();
-        $this->highlightBlogcategory = 0;
+        $this->highlightBlogCategory = 0;
 
         $this->blogcategory_name = $obj['vname'] ?? '';
         $this->blogcategory_id = $obj['id'] ?? '';
@@ -321,6 +321,9 @@ class Blog extends Component
                 });
             }),
             'firstPost'=>BlogPost::latest()->take(1)->when($this->tagfilter,function ($query,$tagfilter){
+                return $query->whereIn('blogtag_id',$tagfilter);
+            })->get(),
+            'topPost'=>BlogPost::latest()->take(5)->when($this->tagfilter,function ($query,$tagfilter){
                 return $query->whereIn('blogtag_id',$tagfilter);
             })->get(),
         ]);
