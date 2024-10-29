@@ -93,22 +93,22 @@
 
         <div class="w-8/12 mx-auto space-y-5 py-16">
 
-{{--            <form wire:submit.prevent="submitComment">--}}
-{{--                <textarea wire:model="comment" placeholder="Add your comment..." rows="4" class="form-control"></textarea>--}}
-{{--                @error('comment') <span class="text-danger">{{ $message }}</span> @enderror--}}
-{{--                <button type="submit" class="btn btn-primary mt-2">Submit</button>--}}
-{{--            </form>--}}
+            <form wire:submit.prevent="submitComment">
+                <textarea wire:model="common.vname" placeholder="Add your comment..." rows="4" class="form-control"></textarea>
+                @error('comment') <span class="text-danger">{{ $message }}</span> @enderror
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            </form>
 
-{{--            <div class="mt-4">--}}
-{{--                <h3>All Comments</h3>--}}
-{{--                @foreach ($comments as $comment)--}}
-{{--                    <div class="border p-2 mb-2">--}}
-{{--                        <strong>{{ $comment->user ? $comment->user->name : 'Guest' }}:</strong>--}}
-{{--                        <p>{{ $comment->comment }}</p>--}}
-{{--                        <small>{{ $comment->created_at->diffForHumans() }}</small>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
+            <div class="mt-4">
+                <h3>All Comments</h3>
+                @foreach ($comments as $comment)
+                    <div class="border p-2 mb-2">
+                        <strong>{{ $comment->user ? $comment->user->name : 'Guest' }}:</strong>
+                        <p>{{ $comment->vname }}</p>
+                        <small>{{ $comment->created_at->diffForHumans() }}</small>
+                    </div>
+                @endforeach
+            </div>
 
 
             <div class="space-y-3">

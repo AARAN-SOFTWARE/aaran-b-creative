@@ -6,24 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-
-            $table->text('vname')->nullable();
-            $table->foreignId('user_id')->constrained()->nullable();
-            $table->boolean('active_id')->nullable();
+            $table->longText('vname');
+            $table->decimal('active_id')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('comments');

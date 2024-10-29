@@ -12,39 +12,40 @@ use Livewire\WithPagination;
 
 class Blogshow extends Component
 {
-//    use CommonTraitNew;
-//    use WithFileUploads;
+    use CommonTraitNew;
+    use WithFileUploads;
 
     public $blog;
 
-//    public $comments = [];
-//    public $comment;
+    public $comments = [];
+    public $comment;
 
     protected $rules = [
-        'comment' => 'required|string|max:500',
+        'common.vname' => 'required|string|max:500',
     ];
 
     public function mount($id)
     {
         $this->blog = BlogPost::find($id);
-//        $this->comments = Comment::with('user')->latest()->get();
+        $this->comments = Comment::with('user')->latest()->get();
 
     }
 
-//    public function submitComment()
-//    {
-//        $this->validate();
-//        $comment = new Comment();
-//        $extraFields = [
-//            'user_id' => auth()->id(),
-//        ];
-//        $this->comment->save($comment, $extraFields);
-//
-//    }
+    public function submitComment()
+    {
+        $this->validate();
+        $comment = new Comment();
+        $extraFields = [
+            'user_id' => auth()->id(),
+        ];
+        $this->common->save($comment, $extraFields);
+        $this->reset('common.vname');
+//        $this->redirect(route('blog-post.show', $this->blog));
+    }
 
 
     public function render()
     {
-        return view('livewire.blog-post.blogshow');
+        return view('livewire.blog-post.blogshow')->layout('layouts.web');;
     }
 }
