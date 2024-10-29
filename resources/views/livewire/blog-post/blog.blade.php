@@ -21,14 +21,40 @@
     <div class="w-7/12 mx-auto flex gap-12">
         <div class="w-8/12 h-auto mb-32 space-y-12">
             {{--            @for($i=1; $i<=5; $i++)--}}
-            <x-web.items.blog.card :list="$list"/>
+            <x-web.items.blog.card :list="$list" :firstPost="$firstPost"/>
             {{--            @endfor--}}
         </div>
         <div class="w-4/12 h-auto rounded-2xl space-y-12">
             <x-web.items.blog.author/>
-            <x-web.items.blog.latest/>
+            <x-web.items.blog.latest :list="$topPost"/>
             <x-web.items.blog.social-media/>
-            <x-web.items.blog.tag/>
+            <x-web.items.blog.category :list="$BlogCategories"/>
+            @if ($tags)
+                <x-web.items.blog.tag :list="$tags"/>
+            @endif
+
+            <div class="flex flex-wrap gap-1">
+                @if ($tagfilter)
+                    @foreach ($tagfilter as $index => $i)
+
+                        <div
+                            class="h-8 p-2 w-auto flex justify-center items-center capitalize rounded text-white text-xs border border-orange-700 bg-orange-700
+                            transition-all duration-300 ease-in-out hover:bg-white hover:text-gray-700 ">
+
+                            {{ \Aaran\Blog\Models\BlogTag::find($i)->vname }}
+
+                            <button wire:click="removeFilter({{ $index }})" class="flex justify-center">
+                                <x-icons.icon :icon="'x-mark'" class="w-4 h-4"/>
+                            </button>
+
+                        </div>
+                    @endforeach
+                    <button wire:click="clearFilter()"
+                            class="p-2 text-xs border border-orange-700 rounded hover:bg-orange-700 hover:text-white transition-all duration-300 ease-in-out">
+                        Clear All
+                    </button>
+                @endif
+            </div>
             <x-web.items.blog.newsletter/>
         </div>
     </div>
@@ -49,14 +75,14 @@
                 <label for="">Public</label>
             </div>
 
-            <x-input.floating wire:model="common.vname" label="Name" />
+            <x-input.floating wire:model="common.vname" label="Name"/>
             @error('common.vname')
             <div class="text-xs text-red-500">
                 {{$message}}
             </div>
             @enderror
 
-            <x-input.textarea wire:model="body" label="Description" />
+            <x-input.textarea wire:model="body" label="Description"/>
             @error('body')
             <div class="text-xs text-red-500">
                 {{$message}}
@@ -65,15 +91,20 @@
 
             <x-dropdown.wrapper label="Blog Category" type="blogcategoryTyped">
                 <div class="relative ">
-                    <x-dropdown.input label="Blog Category" id="blogcategory_name" wire:model.live="blogcategory_name" wire:keydown.arrow-up="decrementBlogcategory" wire:keydown.arrow-down="incrementBlogcategory" wire:keydown.enter="enterBlogcategory" />
+                    <x-dropdown.input label="Blog Category" id="blogcategory_name" wire:model.live="blogcategory_name"
+                                      wire:keydown.arrow-up="decrementBlogcategory"
+                                      wire:keydown.arrow-down="incrementBlogcategory"
+                                      wire:keydown.enter="enterBlogcategory"/>
                     <x-dropdown.select>
                         @if($blogcategoryCollection)
                             @forelse ($blogcategoryCollection as $i => $blogcategory)
-                                <x-dropdown.option highlight="{{$highlightBlogCategory === $i  }}" wire:click.prevent="setBlogcategory('{{$blogcategory->vname}}','{{$blogcategory->id}}')">
+                                <x-dropdown.option highlight="{{$highlightBlogCategory === $i  }}"
+                                                   wire:click.prevent="setBlogcategory('{{$blogcategory->vname}}','{{$blogcategory->id}}')">
                                     {{ $blogcategory->vname }}
                                 </x-dropdown.option>
                             @empty
-                                <button wire:click.prevent="blogcategorySave('{{$blogcategory_name}}')" class="text-white bg-green-500 text-center w-full">
+                                <button wire:click.prevent="blogcategorySave('{{$blogcategory_name}}')"
+                                        class="text-white bg-green-500 text-center w-full">
                                     create
                                 </button>
                             @endforelse
@@ -84,15 +115,19 @@
 
             <x-dropdown.wrapper label="Blog Tag" type="blogtagTyped">
                 <div class="relative ">
-                    <x-dropdown.input label="Blog Tag" id="blogtag_name" wire:model.live="blogtag_name" wire:keydown.arrow-up="decrementBlogtag" wire:keydown.arrow-down="incrementBlogtag" wire:keydown.enter="enterBlogtag" />
+                    <x-dropdown.input label="Blog Tag" id="blogtag_name" wire:model.live="blogtag_name"
+                                      wire:keydown.arrow-up="decrementBlogtag"
+                                      wire:keydown.arrow-down="incrementBlogtag" wire:keydown.enter="enterBlogtag"/>
                     <x-dropdown.select>
                         @if($blogtagCollection)
                             @forelse ($blogtagCollection as $i => $blogtag)
-                                <x-dropdown.option highlight="{{$highlightBlogCategory === $i  }}" wire:click.prevent="setBlogTag('{{$blogtag->vname}}','{{$blogtag->id}}')">
+                                <x-dropdown.option highlight="{{$highlightBlogCategory === $i  }}"
+                                                   wire:click.prevent="setBlogTag('{{$blogtag->vname}}','{{$blogtag->id}}')">
                                     {{ $blogtag->vname }}
                                 </x-dropdown.option>
                             @empty
-                                <button wire:click.prevent="blogtagSave('{{$blogtag_name}}')" class=" bg-blue-100 text-blue-600 text-center hover:font-bold w-full">
+                                <button wire:click.prevent="blogtagSave('{{$blogtag_name}}')"
+                                        class=" bg-blue-100 text-blue-600 text-center hover:font-bold w-full">
                                     create
                                 </button>
                             @endforelse
@@ -109,15 +144,20 @@
                     <div class="flex-shrink-0">
                         <div>
                             @if($image)
-                                <div class=" flex-shrink-0 border-2 border-dashed border-gray-300 p-1 rounded-lg overflow-hidden">
-                                    <img class="w-[156px] h-[89px] rounded-lg hover:brightness-110 hover:scale-105 duration-300 transition-all ease-out" src="{{ $image->temporaryUrl() }}" alt="{{$image?:''}}" />
+                                <div
+                                    class=" flex-shrink-0 border-2 border-dashed border-gray-300 p-1 rounded-lg overflow-hidden">
+                                    <img
+                                        class="w-[156px] h-[89px] rounded-lg hover:brightness-110 hover:scale-105 duration-300 transition-all ease-out"
+                                        src="{{ $image->temporaryUrl() }}" alt="{{$image?:''}}"/>
                                 </div>
                             @endif
 
                             @if(!$image && isset($image))
-                                <img class="h-24 w-full" src="{{URL(\Illuminate\Support\Facades\Storage::url('images/'.$old_image))}}" alt="">
+                                <img class="h-24 w-full"
+                                     src="{{URL(\Illuminate\Support\Facades\Storage::url('images/'.$old_image))}}"
+                                     alt="">
                             @else
-                                <x-icons.icon :icon="'logo'" class="w-auto h-auto block " />
+                                <x-icons.icon :icon="'logo'" class="w-auto h-auto block "/>
                             @endif
                         </div>
                     </div>
@@ -126,9 +166,9 @@
                             <label for="bg_image" class="text-gray-500 font-semibold text-base rounded flex flex-col items-center
                                    justify-center cursor-pointer border-2 border-gray-300 border-dashed p-2
                                    mx-auto font-[sans-serif]">
-                                <x-icons.icon icon="cloud-upload" class="w-8 h-auto block text-gray-400" />
+                                <x-icons.icon icon="cloud-upload" class="w-8 h-auto block text-gray-400"/>
                                 Upload Photo
-                                <input type="file" id='bg_image' wire:model="image" class="hidden" />
+                                <input type="file" id='bg_image' wire:model="image" class="hidden"/>
                                 <p class="text-xs font-light text-gray-400 mt-2">PNG and JPG are
                                     Allowed.</p>
                             </label>
