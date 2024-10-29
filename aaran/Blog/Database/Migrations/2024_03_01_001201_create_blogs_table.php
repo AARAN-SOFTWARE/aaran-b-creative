@@ -23,28 +23,12 @@ return new class extends Migration {
                 $table->timestamps();
             });
 
-            Schema::create('comments', function (Blueprint $table) {
-                $table->id();
-                $table->foreignId('user_id')->references('id')->on('users');
-                $table->foreignId('blog_posts_id')->references('id')->on('blog_posts');
-                $table->text('body');
-                $table->timestamps();
-            });
-
-            Schema::create('likes', function (Blueprint $table) {
-                $table->id();
-                $table->foreignId('blog_posts_id')->references('id')->on('blog_posts');
-                $table->tinyInteger('like')->default(0);
-                $table->timestamps();
-            });
-
         }
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('likes');
-        Schema::dropIfExists('comments');
+
         Schema::dropIfExists('posts');
     }
 };

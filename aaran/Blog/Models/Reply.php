@@ -4,13 +4,13 @@ namespace Aaran\Blog\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Reply extends Model
 {
     //
     protected $guarded = [];
 
-    public function replies()
+    public function comment()
     {
-        return $this->hasMany(Reply::class);
+        return $this->belongsTo(Comment::class);
     }
 }

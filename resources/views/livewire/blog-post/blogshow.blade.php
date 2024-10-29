@@ -1,37 +1,36 @@
-@props([
-    'list' => null,
-])
-    @foreach($list as $row)
-<div class="bg-white rounded-2xl">
+<div class="bg-stone-100 font-lex">
+    <div>
+        <x-web.items.banner title="Blog" tagline="Inspiring Success: Your Pathway to Excellence!"/>
+    </div>
 
-        <div class="relative">
-            <img src="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$row->image) }}" alt="" class="w-full h-[24rem] rounded-t-2xl">
-            <div
-                class="max-w-max bg-orange-600 text-xs text-white px-2 py-1 rounded absolute top-6 left-6 shadow-sm shadow-gray-900">
-                {{ \Aaran\Blog\Models\BlogPost::tagName($row->blogtag_id) ?: 'posts'}}
-            </div>
-        </div>
+    <div class="w-8/12 mx-auto pt-32 pb-16">
 
-        <div class="pt-12  space-y-5 ">
-            <div class="px-5 font-semibold text-[10px] text-orange-700">{{ $row->created_at->diffForHumans() }}</div>
-            <div class="px-5 uppercase font-merri text-2xl tracking-wider">{{\Illuminate\Support\Str::words($row->vname,10)}}</div>
-            <div class="px-5 text-xs text-gray-400 leading-loose tracking-wider">
-                {{\Illuminate\Support\Str::words($row->body,26)}}
+        {{--    @foreach($list as $row)--}}
+        <div class="bg-white rounded-2xl">
 
-                <a href="{{ route('blog-post.show', $row->id) }}" class="inline-flex items-center ">
-                    <span>&nbsp;</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3.5 ">
-                        <path fill-rule="evenodd"
-                              d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
-                              clip-rule="evenodd"/>
-                    </svg>
-                </a>
-
+            <div class="relative">
+                <img src="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$blog->image) }}"
+                     alt="{{$blog->image}}" class="w-full h-[40rem] rounded-t-2xl">
+                {{--                <img src="../../../../images/wall1.webp" alt="" class="w-full h-[40rem] rounded-t-2xl">--}}
+                <div
+                    class="max-w-max bg-orange-600 text-xs text-white px-2 py-1 rounded absolute top-6 left-6 shadow-sm shadow-gray-900">
+                    {{\Aaran\Blog\Models\BlogPost::tagName($blog->blogtag_id)}}
+                </div>
             </div>
 
-            <div class="px-5 text-xs border-t py-5 flex justify-between items-center">
-                <span class="text-gray-500">Post By - <span class="text-orange-700 font-normal">{{$row->user->name,10}}</span></span>
-                <span class="inline-flex items-center space-x-4">
+            <div class="pt-12  space-y-5 ">
+                <div
+                    class="px-5 font-semibold text-[10px] text-orange-700">{{ $blog->created_at->diffForHumans() }}</div>
+                <div class="px-5 uppercase font-merri text-2xl tracking-wider">{{$blog->vname}}
+                </div>
+                <div class="px-5 text-xs text-gray-400 leading-loose tracking-wider">
+                    {{$blog->body}}
+                </div>
+
+                <div class="px-5 text-xs border-t py-5 flex justify-between items-center">
+                <span class="text-gray-500">Post By - <span
+                        class="text-orange-700 font-normal">{{ $blog->user->name }}</span></span>
+                    <span class="inline-flex items-center space-x-4">
                             <span>
                                 <svg width="" height="" viewBox="0 0 90 90" fill="none"
                                      xmlns="http://www.w3.org/2000/svg" class=" w-4 h-4 ">
@@ -51,7 +50,6 @@
     d="M79.3339 27.1022C79.3868 27.8681 79.3869 28.634 79.3869 29.4069C79.3869 52.9587 61.4574 80.121 28.6727 80.121V80.1069C18.988 80.121 9.5045 77.3469 1.35156 72.1163C2.7598 72.2857 4.17509 72.3704 5.59392 72.374C13.6198 72.381 21.4163 69.6881 27.7304 64.7292C20.1033 64.5845 13.4151 59.6116 11.0786 52.3516C13.7504 52.8669 16.5033 52.761 19.1257 52.0445C10.8104 50.3645 4.82803 43.0587 4.82803 34.574C4.82803 34.4963 4.82803 34.4222 4.82803 34.3481C7.30568 35.7281 10.0798 36.494 12.9174 36.5787C5.08568 31.3445 2.67156 20.9257 7.40097 12.7798C16.4504 23.9151 29.8021 30.6845 44.1351 31.401C42.6986 25.2104 44.661 18.7234 49.2916 14.3716C56.4704 7.62336 67.761 7.96925 74.5092 15.1445C78.501 14.3575 82.3269 12.8928 85.828 10.8175C84.4974 14.9434 81.7127 18.4481 77.9927 20.6751C81.5257 20.2587 84.9774 19.3128 88.228 17.8692C85.8351 21.4551 82.821 24.5787 79.3339 27.1022Z"
     fill="#1D9BF0"/>
 </svg>
-
                             </span>
                             <span>
                                 <svg width="" height="" viewBox="0 0 90 90" fill="none"
@@ -85,7 +83,91 @@
 
 
                         </span>
+                </div>
             </div>
         </div>
+        {{--    @endforeach--}}
+    </div>
+
+    <div class="w-8/12 mx-auto space-y-5 py-16">
+
+        <div class="w-8/12 mx-auto space-y-5 py-16">
+
+{{--            <form wire:submit.prevent="submitComment">--}}
+{{--                <textarea wire:model="comment" placeholder="Add your comment..." rows="4" class="form-control"></textarea>--}}
+{{--                @error('comment') <span class="text-danger">{{ $message }}</span> @enderror--}}
+{{--                <button type="submit" class="btn btn-primary mt-2">Submit</button>--}}
+{{--            </form>--}}
+
+{{--            <div class="mt-4">--}}
+{{--                <h3>All Comments</h3>--}}
+{{--                @foreach ($comments as $comment)--}}
+{{--                    <div class="border p-2 mb-2">--}}
+{{--                        <strong>{{ $comment->user ? $comment->user->name : 'Guest' }}:</strong>--}}
+{{--                        <p>{{ $comment->comment }}</p>--}}
+{{--                        <small>{{ $comment->created_at->diffForHumans() }}</small>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+
+
+            <div class="space-y-3">
+                <div>Comments</div>
+
+                <form action="">
+            <textarea name="" id="" cols="30" rows="3">
+
+            </textarea>
+                    <input type="submit" value="Comment">
+                </form>
+            </div>
+
+            <div class="space-y-3">
+                <div>All Comments</div>
+
+                <div>
+                    <div class="font-semibold">Admin</div>
+                    <div>
+                        1 Lorem ipsum dolor.
+                    </div>
+                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>
+                </div>
+
+                <div>
+                    <div class="font-semibold">User</div>
+                    <div>
+                        2 Lorem ipsum dolor.
+                    </div>
+                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>
+                </div>
+
+                <div>
+                    <div class="font-semibold">manager</div>
+                    <div>
+                        3 Lorem ipsum dolor.
+                    </div>
+                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>
+                </div>
+            </div>
+
+            <div style="display: none" class="replyDiv space-y-2">
+                <textarea name="" id="" cols="30" rows="3" placeholder="Write Something Here"></textarea>
+                <div>
+                    <a href="" class="bg-blue-500 text-white px-3 py-1">Reply</a>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+            function reply(caller) {
+                $('.replyDiv').insertAfter($(caller));
+
+                $('.replyDiv').show();
+            }
+
+        </script>
+
+    </div>
 </div>
-    @endforeach
