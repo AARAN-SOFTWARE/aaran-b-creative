@@ -86,13 +86,29 @@
                             </span>
 
 
-                        </span>
+        </span>
         </div>
     </div>
 </div>
 @endforeach
     @foreach($list->skip(3) as $row)
         <div class="bg-white rounded-2xl">
+
+        <div class="pt-12  space-y-5 ">
+            <div class="px-5 font-semibold text-[10px] text-orange-700">{{ $row->created_at->diffForHumans() }}</div>
+            <div class="px-5 uppercase font-merri text-2xl tracking-wider">{{\Illuminate\Support\Str::words($row->vname,10)}}</div>
+            <div class="px-5 text-xs text-gray-400 leading-loose tracking-wider">
+                {{\Illuminate\Support\Str::words($row->body,26)}}
+
+                <a href="{{ route('blog-post.show', $row->id) }}" class="inline-flex items-center ">
+                    <span>&nbsp;</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3.5 ">
+                        <path fill-rule="evenodd"
+                              d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </a>
+
 
             <div class="relative">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$row->image) }}" alt="" class="w-full h-[24rem] rounded-t-2xl">
