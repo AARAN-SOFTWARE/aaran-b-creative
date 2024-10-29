@@ -20,7 +20,7 @@
         <div class="px-5 text-xs text-gray-400 leading-loose tracking-wider">
             {{\Illuminate\Support\Str::words($first->body,26)}}
 
-            <a href="" class="inline-flex items-center ">
+            <a href="{{route('blog-post.show', [$first->id])}}" class="inline-flex items-center ">
                 <span>&nbsp;</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3.5 ">
                     <path fill-rule="evenodd"
@@ -124,7 +124,7 @@
                 <div class="px-5 text-xs text-gray-400 leading-loose tracking-wider">
                     {{\Illuminate\Support\Str::words($row->body,26)}}
 
-                    <a href="" class="inline-flex items-center ">
+                    <a href="{{route('blog-post.show',[$row->id])}}" class="inline-flex items-center ">
                         <span>&nbsp;</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3.5 ">
                             <path fill-rule="evenodd"

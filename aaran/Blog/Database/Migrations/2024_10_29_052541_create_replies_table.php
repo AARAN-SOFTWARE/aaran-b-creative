@@ -4,26 +4,22 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
-    /**
-     * Run the migrations.
-     */
+return new class extends Migration
+{
+
     public function up(): void
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('comment_id')->constrained()->nullable();
-            $table->text('vname');
-            $table->foreignId('user_id')->constrained()->nullable();
-            $table->boolean('active_id')->nullable();
-
+            $table->foreignId('comment_id')->references('id')->on('comments');
+            $table->longText('vname');
+            $table->decimal('active_id')->nullable();
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('replies');
