@@ -107,67 +107,82 @@
                         <p>{{ $comment->vname }}</p>
                         <small>{{ $comment->created_at->diffForHumans() }}</small>
                     </div>
+
+                    <div class="inline-flex text-gray-500 gap-x-3">
+                        <button wire:click="edit({{ $comment->id }})" class="rounded-md ">
+
+                            <x-icons.icon :icon="'pencil'"
+                                          class="block w-auto h-5 text-cyan-700 hover:scale-110" />
+                        </button>
+
+                        <button wire:click="getDelete({{ $comment->id }})" class="rounded-md ">
+
+                            <x-icons.icon :icon="'trash'"
+                                          class="block w-auto h-5 text-cyan-700 hover:scale-110" />
+                        </button>
+                    </div>
                 @endforeach
             </div>
+            <x-modal.delete />
 
 
-            <div class="space-y-3">
-                <div>Comments</div>
+{{--            <div class="space-y-3">--}}
+{{--                <div>Comments</div>--}}
 
-                <form action="">
-            <textarea name="" id="" cols="30" rows="3">
+{{--                <form action="">--}}
+{{--            <textarea name="" id="" cols="30" rows="3">--}}
 
-            </textarea>
-                    <input type="submit" value="Comment">
-                </form>
-            </div>
+{{--            </textarea>--}}
+{{--                    <input type="submit" value="Comment">--}}
+{{--                </form>--}}
+{{--            </div>--}}
 
-            <div class="space-y-3">
-                <div>All Comments</div>
+{{--            <div class="space-y-3">--}}
+{{--                <div>All Comments</div>--}}
 
-                <div>
-                    <div class="font-semibold">Admin</div>
-                    <div>
-                        1 Lorem ipsum dolor.
-                    </div>
-                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>
-                </div>
+{{--                <div>--}}
+{{--                    <div class="font-semibold">Admin</div>--}}
+{{--                    <div>--}}
+{{--                        1 Lorem ipsum dolor.--}}
+{{--                    </div>--}}
+{{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
+{{--                </div>--}}
 
-                <div>
-                    <div class="font-semibold">User</div>
-                    <div>
-                        2 Lorem ipsum dolor.
-                    </div>
-                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>
-                </div>
+{{--                <div>--}}
+{{--                    <div class="font-semibold">User</div>--}}
+{{--                    <div>--}}
+{{--                        2 Lorem ipsum dolor.--}}
+{{--                    </div>--}}
+{{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
+{{--                </div>--}}
 
-                <div>
-                    <div class="font-semibold">manager</div>
-                    <div>
-                        3 Lorem ipsum dolor.
-                    </div>
-                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>
-                </div>
-            </div>
+{{--                <div>--}}
+{{--                    <div class="font-semibold">manager</div>--}}
+{{--                    <div>--}}
+{{--                        3 Lorem ipsum dolor.--}}
+{{--                    </div>--}}
+{{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div style="display: none" class="replyDiv space-y-2">
-                <textarea name="" id="" cols="30" rows="3" placeholder="Write Something Here"></textarea>
-                <div>
-                    <a href="" class="bg-blue-500 text-white px-3 py-1">Reply</a>
-                </div>
-            </div>
+{{--            <div style="display: none" class="replyDiv space-y-2">--}}
+{{--                <textarea name="" id="" cols="30" rows="3" placeholder="Write Something Here"></textarea>--}}
+{{--                <div>--}}
+{{--                    <a href="" class="bg-blue-500 text-white px-3 py-1">Reply</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
 
 
-        <script>
+{{--        <script>--}}
 
-            function reply(caller) {
-                $('.replyDiv').insertAfter($(caller));
+{{--            function reply(caller) {--}}
+{{--                $('.replyDiv').insertAfter($(caller));--}}
 
-                $('.replyDiv').show();
-            }
+{{--                $('.replyDiv').show();--}}
+{{--            }--}}
 
-        </script>
+{{--        </script>--}}
 
     </div>
 </div>
