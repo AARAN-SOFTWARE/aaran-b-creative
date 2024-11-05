@@ -89,100 +89,99 @@
         {{--    @endforeach--}}
     </div>
 
-    <div class="w-8/12 mx-auto space-y-5 py-16">
+    <div class="w-6/12 mx-auto space-y-5 py-16">
+        <div class="text-md text-orange-700">Write down your Comments here....</div>
+        <form wire:submit.prevent="submitComment" class="flex-col flex  gap-y-5">
+                <textarea wire:model="common.vname" placeholder="Add your comment..."
+                          class=" h-36 w-full border border-gray-200 focus:border-0 focus:ring-orange-700 rounded-md"></textarea>
+            @error('comment') <span class="text-danger">{{ $message }}</span> @enderror
+            <button type="submit" class="  max-w-max px-4 py-2 bg-orange-700 text-white rounded-md">Submit</button>
+        </form>
 
-        <div class="w-8/12 mx-auto space-y-5 py-16">
+        <div class="mt-4 space-y-5">
+            <h3 class="text-sm">All Comments</h3>
+            @foreach ($comments as $comment)
 
-            <form wire:submit.prevent="submitComment">
-                <textarea wire:model="common.vname" placeholder="Add your comment..." rows="4" class="form-control"></textarea>
-                @error('comment') <span class="text-danger">{{ $message }}</span> @enderror
-                <button type="submit" class="btn btn-primary mt-2">Submit</button>
-            </form>
+                <div class="w-full border-b bg-white p-5 flex gap-x-5 rounded">
+                    <img scr="{{$comment->user->profile_photo_url}}" class="w-10 h-10 rounded-full bg-orange-100"/>
+                    <div class="w-full space-y-2">
+                        <div class="text-xs font-semibold">{{ $comment->user ? $comment->user->name : 'Guest' }}:
+                        </div>
+                        <div class="text-xs">{{ $comment->vname }}</div>
+                        <div class="w-full flex justify-between">
+                            <div class="text-xs text-gray-400">{{ $comment->created_at->diffForHumans() }}</div>
+                            <div class="inline-flex text-gray-500 gap-x-3">
+                                <button wire:click="editComments({{ $comment->id }})" class="rounded-md ">
 
-            <div class="mt-4">
-                <h3>All Comments</h3>
-                @foreach ($comments as $comment)
-                    <div class="border p-2 mb-2">
-                        <strong>{{ $comment->user ? $comment->user->name : 'Guest' }}:</strong>
-                        <p>{{ $comment->vname }}</p>
-                        <small>{{ $comment->created_at->diffForHumans() }}</small>
+                                    <x-icons.icon :icon="'pencil'"
+                                                  class="block w-auto h-3.5 text-blue-700 hover:scale-110"/>
+                                </button>
+
+                                <button wire:click="deleteData({{ $comment->id }})" class="rounded-md ">
+
+                                    <x-icons.icon :icon="'trash'"
+                                                  class="block w-auto h-3.5 text-red-700 hover:scale-110"/>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="inline-flex text-gray-500 gap-x-3">
-                        <button wire:click="edit({{ $comment->id }})" class="rounded-md ">
-
-                            <x-icons.icon :icon="'pencil'"
-                                          class="block w-auto h-5 text-cyan-700 hover:scale-110" />
-                        </button>
-
-                        <button wire:click="getDelete({{ $comment->id }})" class="rounded-md ">
-
-                            <x-icons.icon :icon="'trash'"
-                                          class="block w-auto h-5 text-cyan-700 hover:scale-110" />
-                        </button>
-                    </div>
-                @endforeach
-            </div>
-            <x-modal.delete />
-
-
-{{--            <div class="space-y-3">--}}
-{{--                <div>Comments</div>--}}
-
-{{--                <form action="">--}}
-{{--            <textarea name="" id="" cols="30" rows="3">--}}
-
-{{--            </textarea>--}}
-{{--                    <input type="submit" value="Comment">--}}
-{{--                </form>--}}
-{{--            </div>--}}
-
-{{--            <div class="space-y-3">--}}
-{{--                <div>All Comments</div>--}}
-
-{{--                <div>--}}
-{{--                    <div class="font-semibold">Admin</div>--}}
-{{--                    <div>--}}
-{{--                        1 Lorem ipsum dolor.--}}
-{{--                    </div>--}}
-{{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
-{{--                </div>--}}
-
-{{--                <div>--}}
-{{--                    <div class="font-semibold">User</div>--}}
-{{--                    <div>--}}
-{{--                        2 Lorem ipsum dolor.--}}
-{{--                    </div>--}}
-{{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
-{{--                </div>--}}
-
-{{--                <div>--}}
-{{--                    <div class="font-semibold">manager</div>--}}
-{{--                    <div>--}}
-{{--                        3 Lorem ipsum dolor.--}}
-{{--                    </div>--}}
-{{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div style="display: none" class="replyDiv space-y-2">--}}
-{{--                <textarea name="" id="" cols="30" rows="3" placeholder="Write Something Here"></textarea>--}}
-{{--                <div>--}}
-{{--                    <a href="" class="bg-blue-500 text-white px-3 py-1">Reply</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            @endforeach
         </div>
+        <x-modal.delete/>
 
+        {{--            <div class="space-y-3">--}}
+        {{--                <div>Comments</div>--}}
 
-{{--        <script>--}}
+        {{--                <form action="">--}}
+        {{--            <textarea name="" id="" cols="30" rows="3">--}}
 
-{{--            function reply(caller) {--}}
-{{--                $('.replyDiv').insertAfter($(caller));--}}
+        {{--            </textarea>--}}
+        {{--                    <input type="submit" value="Comment">--}}
+        {{--                </form>--}}
+        {{--            </div>--}}
 
-{{--                $('.replyDiv').show();--}}
-{{--            }--}}
+        {{--            <div class="space-y-3">--}}
+        {{--                <div>All Comments</div>--}}
 
-{{--        </script>--}}
+        {{--                <div>--}}
+        {{--                    <div class="font-semibold">Admin</div>--}}
+        {{--                    <div>--}}
+        {{--                        1 Lorem ipsum dolor.--}}
+        {{--                    </div>--}}
+        {{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
+        {{--                </div>--}}
 
+        {{--                <div>--}}
+        {{--                    <div class="font-semibold">User</div>--}}
+        {{--                    <div>--}}
+        {{--                        2 Lorem ipsum dolor.--}}
+        {{--                    </div>--}}
+        {{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
+        {{--                </div>--}}
+
+        {{--                <div>--}}
+        {{--                    <div class="font-semibold">manager</div>--}}
+        {{--                    <div>--}}
+        {{--                        3 Lorem ipsum dolor.--}}
+        {{--                    </div>--}}
+        {{--                    <a href="javascript::void(0);" class="text-blue-500" onclick="reply(this)">Reply</a>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+
+        {{--            <div style="display: none" class="replyDiv space-y-2">--}}
+        {{--                <textarea name="" id="" cols="30" rows="3" placeholder="Write Something Here"></textarea>--}}
+        {{--                <div>--}}
+        {{--                    <a href="" class="bg-blue-500 text-white px-3 py-1">Reply</a>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+
+        {{--        <script>--}}
+        {{--            function reply(caller) {--}}
+        {{--                $('.replyDiv').insertAfter($(caller));--}}
+        {{--                $('.replyDiv').show();--}}
+        {{--            }--}}
+        {{--        </script>--}}
     </div>
 </div>
