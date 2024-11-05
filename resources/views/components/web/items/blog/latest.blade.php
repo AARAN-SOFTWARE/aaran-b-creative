@@ -7,11 +7,12 @@
     </div>
 
     <div class="p-5 space-y-5">
-       @foreach($list->skip(1) as $row)
+        @foreach($list->skip(1) as $row)
 
             <div class="flex gap-x-5">
                 <div class="w-1/3">
-                    <img src="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$row->image) }}" alt="" class=" w-full h-24 object-cover">
+                    <img src="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$row->image) }}" alt=""
+                         class=" w-full h-24 object-cover">
                 </div>
 
                 <div class="w-2/3 space-y-2">

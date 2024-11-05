@@ -20,9 +20,7 @@
 
     <div class="w-7/12 mx-auto flex gap-12">
         <div class="w-8/12 h-auto mb-32 space-y-12">
-            {{--            @for($i=1; $i<=5; $i++)--}}
             <x-web.items.blog.card :list="$list" :firstPost="$firstPost"/>
-            {{--            @endfor--}}
         </div>
         <div class="w-4/12 h-auto rounded-2xl space-y-12">
             <x-web.items.blog.author/>
