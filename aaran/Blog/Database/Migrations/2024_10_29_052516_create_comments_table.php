@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id();
             $table->longText('vname');
             $table->decimal('active_id')->nullable();
+            $table->foreignId('blog_post_id')->references('id')->on('blog_posts');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
