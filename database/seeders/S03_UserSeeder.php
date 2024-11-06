@@ -23,7 +23,7 @@ class S03_UserSeeder extends Seeder
 
         ]);
         User::create([
-            'username' => 'AB0001',
+            'username' => 'SUNDAR',
             'name' => 'sundar',
             'email' => 'sundar@sundar.com',
             'password' => bcrypt('kalarani'),
