@@ -44,7 +44,6 @@ class S03_UserSeeder extends Seeder
             'position' => '',
         ]);
 
-
         User::create([
             'username' => 'AB0003',
             'name' => 'audit',

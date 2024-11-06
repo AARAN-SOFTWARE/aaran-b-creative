@@ -178,17 +178,17 @@
                     </div>
                 </div>
             </div>
-{{--            <div class="w-full h-96  flex-col flex justify-between border border-gray-300 rounded-md">--}}
-{{--                <div class="w-full  flex items-center justify-center">--}}
-{{--                    <span><x-web.dashboard.items.qrpage class="w-auto h-80 self-center "/></span>--}}
-{{--                </div>--}}
-{{--                <div class="">--}}
-{{--                    <div class="w-full bg-gray-400 text-sm inline-flex items-center rounded-b-md">--}}
-{{--                        <span class="w-4/6 py-3 text-center text-white font-semibold tracking-wider">xxxyyyzzzzxxxxyyyyzzzzyyyzzz012</span>--}}
-{{--                        <button class="w-2/6 h-full bg-orange-500 text-white px-2 py-3">Copy Address</button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="w-full h-96  flex-col flex justify-between border border-gray-300 rounded-md">
+                <div class="w-full  flex items-center justify-center">
+                    <span><x-web.dashboard.items.qrpage class="w-auto h-80 self-center "/></span>
+                </div>
+                <div class="">
+                    <div class="w-full bg-gray-400 text-sm inline-flex items-center rounded-b-md">
+                        <span class="w-4/6 py-3 text-center text-white font-semibold tracking-wider">xxxyyyzzzzxxxxyyyyzzzzyyyzzz012</span>
+                        <button class="w-2/6 h-full bg-orange-500 text-white px-2 py-3">Copy Address</button>
+                    </div>
+                </div>
+            </div>
             <div></div>
         </div>
     </div>
