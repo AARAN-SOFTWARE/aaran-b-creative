@@ -23,6 +23,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/icons', App\Livewire\Utilities\Icon\Index::class)->name('icons');
     Route::get('/test', App\Livewire\Test\Index::class)->name('test');
     Route::get('/tree', App\Livewire\Network\Tree\Index::class)->name('tree');
+    Route::get('/tree/show', App\Livewire\Network\Tree\show::class)->name('tree.show');
+    Route::get('/topUp', App\Livewire\Network\Topup\Index::class)->name('topUp.index');
+    Route::get('/topUp/report', App\Livewire\Network\Topup\Show::class)->name('topUp.report');
+    Route::get('/level', App\Livewire\Reward\Level::class)->name('level');
+    Route::get('/profile', App\Livewire\Profile\Index::class)->name('profile');
+    Route::get('/withdraw', App\Livewire\Payout\Withdraw::class)->name('withdraw');
+    Route::get('/withdraw/report', App\Livewire\Payout\Report::class)->name('withdraw.report');
+    Route::get('/wallet/report', App\Livewire\Wallet\Report::class)->name('wallet.report');
+    Route::get('membership', App\Livewire\Network\Member::class)->name('membership');
     Route::get('blogTags',App\Livewire\BlogPost\BlogTag::class)->name('blogTags');
 
 });

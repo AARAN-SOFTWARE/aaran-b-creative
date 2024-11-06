@@ -16,9 +16,21 @@ class AddUser extends Component
     public $name;
     public $email;
     public $phone;
+    public $password;
+    public $password_confirmation;
     public $usertype;
     public $parent_id;
 
+
+    public function updatedPasswordConfirmation()
+    {
+        // Check if passwords match as user types in the confirm password field
+        if ($this->password !== $this->password_confirmation) {
+            $this->addError('password_confirmation', 'Password and Confirm Password do not match.');
+        } else {
+            $this->resetErrorBag('password_confirmation'); // Clear the error if passwords match
+        }
+    }
     public function getSave()
     {
         $level = 0;
@@ -31,8 +43,9 @@ class AddUser extends Component
             if ($parent->children()->where('position', 'left')->exists()) {
                 if (!$parent->children()->where('position', 'right')->exists()) {
                     $position = 'right';
-                }else{
-                 $this->showEditModal=false;
+                } else {
+                    $this->showEditModal = false;
+                    return; // Exit if both positions are filled
                 }
             } else {
                 $position = 'left';
@@ -40,7 +53,17 @@ class AddUser extends Component
         }
 
         if ($this->username != '') {
-            $obj=User::create([
+            // Final check that password and confirmation match before saving
+            if ($this->password !== $this->password_confirmation) {
+                $this->addError('password_confirmation', 'Password and Confirm Password do not match.');
+                return;
+            }
+
+            // Clear the error if passwords match
+            $this->resetErrorBag('password_confirmation');
+
+            // Proceed with user creation
+            $obj = User::create([
                 'username' => $this->username,
                 'name' => $this->name,
                 'email' => $this->email,
@@ -49,19 +72,20 @@ class AddUser extends Component
                 'parent_id' => auth()->id(),
                 'level' => $level,
                 'position' => $position,
-                'password'=> bcrypt('123456789'),
+                'password' => bcrypt($this->password), // Encrypt the password
             ]);
-            $message = "Created a new user with username '{$this->username}'.";
+
+            $this->dispatch('notify', ['type' => 'success', 'content' => 'User created successfully']);
+            $this->userDetail($obj);
         }
-        $this->dispatch('notify', ...['type' => 'success', 'content' => $message . ' Successfully']);
-        $this->userDetail($obj);
     }
 
-    public function userDetail($obj)
-    {
-        dd($obj);
-    }
-    public function clearFields():void
+//    public function userDetail($obj)
+//    {
+//        dd($obj);
+//    }
+
+    public function clearFields(): void
     {
         $this->username = '';
         $this->name = '';
@@ -69,6 +93,8 @@ class AddUser extends Component
         $this->phone = '';
         $this->usertype = '';
         $this->parent_id = '';
+        $this->password = '';
+        $this->password_confirmation = '';
     }
 
     public function render()
