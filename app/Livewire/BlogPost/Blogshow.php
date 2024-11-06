@@ -41,6 +41,7 @@ class Blogshow extends Component
                 ];
                 $this->common->save($comment, $extraFields);
                 $this->reset('common.vname');
+
             } else {
                 $comment = Comment::find($this->common->vid);
                 $extraFields = [
@@ -51,20 +52,47 @@ class Blogshow extends Component
             }
         }
 
-
-//        $this->redirect(route('blog-post.show', $this->blog));
+    $this->resetPage();
     }
 
-    public function getObj($id)
+    public function getChange($id)
     {
         if ($id) {
             $BlogComments = Comment::find($id);
             $this->common->vid = $BlogComments->id;
             $this->common->vname = $BlogComments->vname;
+            $this->resetPage();
 
             return $BlogComments;
         }
         return null;
+    }
+
+    public function editComments($id): void
+    {
+        $this->clearFields();
+        $this->getChange($id);
+    }
+
+
+    public function deleteData($id): void
+    {
+        if ($id) {
+            $this->clearFields();
+            $this->getChange($id);
+            $this->showDeleteModal = true;
+
+        }
+    }
+
+    public function trashData()
+    {
+        if ($this->common->vid) {
+            $obj = $this->getChange($this->common->vid);
+            $obj->delete();
+            $this->showDeleteModal = false;
+            $this->resetPage();
+        }
     }
 
     #region[Clear-Fields]
