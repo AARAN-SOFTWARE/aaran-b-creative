@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="w-2/3 space-y-2">
-                    <a class="text-md uppercase tracking-wider font-merri line-clamp-2 text-gray-700 hover:text-orange-700
+                    <a href="{{ route('blog-post.show', $row->id) }}" class="text-md uppercase tracking-wider font-merri line-clamp-2 text-gray-700 hover:text-orange-700
                     transition-all duration-500 ease-in-out cursor-pointer">{{\Illuminate\Support\Str::words($row->vname,10)}}
                     </a>
                     <div class="text-xs text-orange-700">{{ $row->created_at->diffForHumans() }}</div>

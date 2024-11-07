@@ -5,10 +5,8 @@ namespace App\Livewire\BlogPost;
 use Aaran\Blog\Models\BlogPost;
 use Aaran\Blog\Models\Comment;
 use App\Livewire\Trait\CommonTraitNew;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Livewire\WithPagination;
 
 class Blogshow extends Component
 {
@@ -18,7 +16,9 @@ class Blogshow extends Component
     public $blog;
 
     public $comments = [];
+    public $commentsIndex='';
     public $comment;
+    public $blog_post_id;
 
     protected $rules = [
         'common.vname' => 'required|string|max:500',
@@ -27,7 +27,15 @@ class Blogshow extends Component
     public function mount($id)
     {
         $this->blog = BlogPost::find($id);
-        $this->comments = Comment::with('user')->latest()->get();
+        $this->blog_post_id = $id;
+        $this->getComments();
+
+    }
+
+    public function getComments()
+    {
+        $this->comments = Comment::with('user')->latest()->where('blog_post_id','=',$this->blog_post_id)->get();
+
     }
 
     public function submitComment()
@@ -38,6 +46,7 @@ class Blogshow extends Component
                 $comment = new Comment();
                 $extraFields = [
                     'user_id' => auth()->id(),
+                    'blog_post_id' => $this->blog_post_id,
                 ];
                 $this->common->save($comment, $extraFields);
                 $this->reset('common.vname');
@@ -46,13 +55,14 @@ class Blogshow extends Component
                 $comment = Comment::find($this->common->vid);
                 $extraFields = [
                     'user_id' => auth()->id(),
+                    'blog_post_id' => $this->blog_post_id,
                 ];
                 $this->common->edit($comment, $extraFields);
                 $this->reset('common.vname');
             }
         }
 
-    $this->resetPage();
+    $this->getComments();
     }
 
     public function getChange($id)
@@ -75,7 +85,7 @@ class Blogshow extends Component
     }
 
 
-    public function deleteData($id): void
+    public function deleteData($id,$index): void
     {
         if ($id) {
             $this->clearFields();
@@ -83,6 +93,7 @@ class Blogshow extends Component
             $this->showDeleteModal = true;
 
         }
+        $this->commentsIndex = $index;
     }
 
     public function trashData()
@@ -90,9 +101,13 @@ class Blogshow extends Component
         if ($this->common->vid) {
             $obj = $this->getChange($this->common->vid);
             $obj->delete();
+            $this->clearFields();
             $this->showDeleteModal = false;
-            $this->resetPage();
+
         }
+        unset($this->comments[$this->commentsIndex]);
+        $this->comments = collect($this->comments);
+        $this->commentsIndex='';
     }
 
     #region[Clear-Fields]
@@ -105,6 +120,6 @@ class Blogshow extends Component
 
     public function render()
     {
-        return view('livewire.blog-post.blogshow')->layout('layouts.web');;
+        return view('livewire.blog-post.blogshow')->layout('layouts.web');
     }
 }
