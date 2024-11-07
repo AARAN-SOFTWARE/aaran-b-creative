@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Aaran\Blog\Models\BlogPost;
 use Illuminate\Http\Request;
 
 use App\Models\User;
@@ -19,11 +20,16 @@ class AdminController extends Controller
     public function index()
     {
         $this->getUserData();
+        $blogPosts = BlogPost::latest()->take(5)->get();
+
         if (Auth::id()) {
             $usertype = Auth()->user()->usertype;
 
             if ($usertype == 'user') {
-                return view('user.dashboard')->with('users', $this->users);
+                return view('user.dashboard')->with([
+                    'users' => $this->users,
+                    'blogPosts' => $blogPosts,
+                ]);
             } elseif ($usertype == 'admin') {
                 return view('admin.index')->with('users', $this->users);
             } else {
