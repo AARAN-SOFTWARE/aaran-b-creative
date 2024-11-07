@@ -125,19 +125,34 @@
                 </div>
             </div>
         </div>
+
         <div class="grid grid-cols-3 gap-5 my-5">
             <div class="h-96  overflow-y-auto p-5 border border-gray-300 rounded-md">
+
                 <div class="text-lg font-semibold border-b border-gray-300 pb-2">Latest News</div>
-                <div class="w-full inline-flex items-center text-center font-semibold text-sm">
-                    <div class="w-1/3">Title</div>
-                    <div class="w-2/3">News</div>
-                </div>
-                @for($i=1; $i<=5; $i++)
-                    <div class="w-full inline-flex items-center text-start text-sm text-gray-600">
-                        <div class="w-1/3"> Lorem ipsum dolor sit amet.</div>
-                        <div class="w-2/3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium!</div>
+
+                @foreach($blogPosts as $blogPost)
+
+                    <div class="flex gap-x-5 my-3">
+                        <div class="w-1/2">
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$blogPost->image) }}"
+                                 alt=""
+                                 class="w-full h-24 object-cover">
+                        </div>
+
+                        <div class="w-full space-y-2">
+
+                            <a href="{{ route('blog-post.show', $blogPost->id) }}"
+                               class="text-md uppercase tracking-wider font-merri line-clamp-2 text-gray-700 hover:text-orange-700
+                                     transition-all duration-500 ease-in-out cursor-pointer">{{\Illuminate\Support\Str::words($blogPost->vname,8)}}
+                            </a>
+
+                            <div class="text-xs text-orange-700 just">{{ $blogPost->created_at->diffForHumans() }}</div>
+
+                        </div>
                     </div>
-                @endfor
+                @endforeach
+
             </div>
 
             <div class="h-96 border border-gray-300 rounded-md flex-col flex justify-center  p-5">
@@ -172,8 +187,8 @@
 
                     </div>
                     <div class="w-full">
-{{--                        <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +--}}
-{{--                        </button>--}}
+                        {{--                        <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +--}}
+                        {{--                        </button>--}}
                         @livewire('authentication.add-user')
                     </div>
                 </div>
