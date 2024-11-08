@@ -42,6 +42,9 @@
                 </svg>
                 <span>Refresh</span>
             </button>
+
+
+
         </div>
 
         <div class="relative flex overflow-x-hidden bg-purple-400 my-4 space-x-8">
@@ -186,10 +189,41 @@
                         </svg>
 
                     </div>
-                    <div class="w-full">
-                        {{--                        <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +--}}
-                        {{--                        </button>--}}
-                        @livewire('authentication.add-user')
+                    <div class="w-full space-y-3">
+                        <div>Referral Link</div>
+                        <div class="border-b border-gray-300"></div>
+                        <div>Left Referral Link</div>
+
+                        <div x-data="{ copied: false, color: 'text-blue-400' }">
+                            <div :class="color"
+                                 @click="
+             $dispatch('copy-to-clipboard', '{{  route('user.register',[auth()->id(),'L']) }}');
+             color = 'text-indigo-400';
+             copied = true;
+             setTimeout(() => { color = 'text-blue-400'; copied = false; }, 2000);
+         "
+                                 class="cursor-pointer">
+                                {{ route('user.register',[auth()->id(),'L'])}}
+                            </div>
+                            <span x-show="copied" x-transition>Copied!</span>
+                        </div>
+
+
+                        <div class="border-b border-gray-300"></div>
+                        <div>Right Referral Link</div>
+                        <div x-data="{ copied: false, color: 'text-blue-400' }">
+                            <div :class="color"
+                                 @click="
+             $dispatch('copy-to-clipboard', '{{  route('user.register',[auth()->id(),'R']) }}');
+             color = 'text-indigo-400';
+             copied = true;
+             setTimeout(() => { color = 'text-blue-400'; copied = false; }, 2000);
+         "
+                                 class="cursor-pointer">
+                                {{  route('user.register',[auth()->id(),'R']) }}
+                            </div>
+                            <span x-show="copied" x-transition>Copied!</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -208,3 +242,16 @@
         </div>
     </div>
 </x-app-layout>
+
+
+<script>
+    window.addEventListener('copy-to-clipboard', (event) => {
+        const text = event.detail;
+        const el = document.createElement('textarea');
+        el.value = text;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    });
+</script>

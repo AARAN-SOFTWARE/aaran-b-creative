@@ -11,7 +11,7 @@ class S03_UserSeeder extends Seeder
     public static function run(): void
     {
         User::create([
-            'username' => 'AB1ADMIN',
+            'username' => 'AB0001ADMIN',
             'name' => 'admin',
             'email' => 'admin@aaran.com',
             'usertype' => 'admin',
