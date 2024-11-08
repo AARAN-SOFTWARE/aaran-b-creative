@@ -7,7 +7,7 @@
     </div>
 
     <div class="p-5 space-y-5">
-        @foreach($list->skip(1) as $row)
+        @foreach($list->skip(4) as $row)
 
             <div class="flex gap-x-5">
                 <div class="w-1/3">

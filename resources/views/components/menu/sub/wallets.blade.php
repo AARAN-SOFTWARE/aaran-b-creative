@@ -9,7 +9,7 @@
                             <x-icons.icon-fill iconfill="tag-menu" class="w-4 h-auto block fill-gray-500 group-hover:fill-white"/>
                             <span
                                 class="flex font-semibold text-sm tracking-wide truncate my-4 font-sans uppercase">
-                                Payout
+                                Earnings & Wallets
                             </span>
                         </span>
         <span class="inline-flex justify-center items-center">
@@ -27,7 +27,7 @@
     <div x-show="selected === 5" class="flex flex-col">
 
         <ul class="grid-cols-1 grid bg-white space-y-0.5">
-            <x-menu.items.payout-menu />
+            <x-menu.items.wallets-menu />
         </ul>
     </div>
 </li>

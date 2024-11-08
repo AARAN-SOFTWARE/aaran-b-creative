@@ -9,7 +9,7 @@
                             <x-icons.icon-fill iconfill="tag-menu" class="w-4 h-auto block fill-gray-500 group-hover:fill-white"/>
                             <span
                                 class="flex font-semibold text-sm tracking-wide truncate my-4 font-sans uppercase">
-                                Team
+                                Referrals
                             </span>
                         </span>
         <span class="inline-flex justify-center items-center">

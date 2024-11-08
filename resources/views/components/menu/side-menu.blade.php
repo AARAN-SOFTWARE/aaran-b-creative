@@ -27,10 +27,8 @@
 
             <x-menu.sub.team/>
             <x-menu.sub.topup/>
-            <x-menu.sub.reward/>
             <x-menu.sub.profile/>
-            <x-menu.sub.payout/>
-            <x-menu.sub.wallet/>
+            <x-menu.sub.wallets/>
 
             <x-menu.sub.logout class="hover:bg-violet-600"/>
 
