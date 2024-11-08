@@ -59,7 +59,7 @@
         <div class="w-full py-6">
             {{--                        <button class="w-full text-center bg-green-500 text-white py-3 rounded-md">New Joining +--}}
             {{--                        </button>--}}
-            @livewire('authentication.add-user')
+{{--            @livewire('authentication.add-user')--}}
         </div>
 
     </div>
