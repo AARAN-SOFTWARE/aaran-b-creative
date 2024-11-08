@@ -13,6 +13,9 @@ Route::get('/service', App\Livewire\Web\Home\Service::class)->name('service');
 Route::get('/info', App\Livewire\Web\Home\Info::class)->name('info');
 
 
+Route::get('/user/register/{id}/{position}', App\Livewire\Authentication\AddUser::class)->name('user.register');
+
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 });
@@ -23,6 +26,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/icons', App\Livewire\Utilities\Icon\Index::class)->name('icons');
     Route::get('/test', App\Livewire\Test\Index::class)->name('test');
     Route::get('/tree', App\Livewire\Network\Tree\Index::class)->name('tree');
+    Route::get('/userTreeView', App\Livewire\Network\Tree\UserTreeView::class)->name('user-tree-view');
     Route::get('/tree/show', App\Livewire\Network\Tree\Show::class)->name('tree.show');
     Route::get('/topUp', App\Livewire\Network\Topup\Index::class)->name('topUp.index');
     Route::get('/topUp/report', App\Livewire\Network\Topup\Show::class)->name('topUp.report');
