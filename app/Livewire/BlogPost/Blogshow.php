@@ -5,6 +5,7 @@ namespace App\Livewire\BlogPost;
 use Aaran\Blog\Models\BlogPost;
 use Aaran\Blog\Models\Comment;
 use App\Livewire\Trait\CommonTraitNew;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -19,6 +20,8 @@ class Blogshow extends Component
     public $commentsIndex='';
     public $comment;
     public $blog_post_id;
+    public $image;
+    public $old_image;
 
     protected $rules = [
         'common.vname' => 'required|string|max:500',
@@ -47,6 +50,7 @@ class Blogshow extends Component
                 $extraFields = [
                     'user_id' => auth()->id(),
                     'blog_post_id' => $this->blog_post_id,
+                    'image' => $this->saveImage(),
                 ];
                 $this->common->save($comment, $extraFields);
                 $this->reset('common.vname');
@@ -56,6 +60,7 @@ class Blogshow extends Component
                 $extraFields = [
                     'user_id' => auth()->id(),
                     'blog_post_id' => $this->blog_post_id,
+                    'image' => $this->saveImage(),
                 ];
                 $this->common->edit($comment, $extraFields);
                 $this->reset('common.vname');
@@ -65,12 +70,39 @@ class Blogshow extends Component
     $this->getComments();
     }
 
+    #region[Image]
+    public function saveImage()
+    {
+        if ($this->image) {
+
+            $image = $this->image;
+            $filename = $this->image->getClientOriginalName();
+
+            if (Storage::disk('public')->exists(Storage::path('public/images/' . $this->old_image))) {
+                Storage::disk('public')->delete(Storage::path('public/images/' . $this->old_image));
+            }
+
+            $image->storeAs('images', $filename,'public');
+
+            return $filename;
+
+        } else {
+            if ($this->old_image) {
+                return $this->old_image;
+            } else {
+                return 'no image';
+            }
+        }
+    }
+    #endregion
+
     public function getChange($id)
     {
         if ($id) {
             $BlogComments = Comment::find($id);
             $this->common->vid = $BlogComments->id;
             $this->common->vname = $BlogComments->vname;
+            $this->old_image = $BlogComments->image;
             $this->resetPage();
 
             return $BlogComments;
@@ -115,6 +147,8 @@ class Blogshow extends Component
     {
         $this->common->vid = '';
         $this->common->vname = '';
+        $this->old_image = '';
+        $this->image = '';
     }
     #endregion
 

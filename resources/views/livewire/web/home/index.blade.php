@@ -9,8 +9,5 @@
     <x-web.home.footer-address/>
     <x-web.home.copyright/>
 
-    <div  class="fixed bottom-8 right-4 ">
-        @livewire('forms.home.slide')
-    </div>
 
 </div>

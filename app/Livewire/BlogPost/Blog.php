@@ -313,17 +313,19 @@ class Blog extends Component
     {
         $this->getBlogcategoryList();
         $this->getBlogtagList();
+        $this->getListForm->perPage = 6;
 
         return view('livewire.blog-post.blog')->layout('layouts.web')->with([
             'list' => $this ->getListForm ->getList(BlogPost::class,function ($query){
                 return $query->latest()->when($this->tagfilter,function ($query,$tagfilter){
                     return $query->whereIn('blogtag_id',$tagfilter);
+
                 });
             }),
             'firstPost'=>BlogPost::latest()->take(1)->when($this->tagfilter,function ($query,$tagfilter){
                 return $query->whereIn('blogtag_id',$tagfilter);
             })->get(),
-            'topPost'=>BlogPost::latest()->take(5)->when($this->tagfilter,function ($query,$tagfilter){
+            'topPost'=>BlogPost::latest()->take(8)->when($this->tagfilter,function ($query,$tagfilter){
                 return $query->whereIn('blogtag_id',$tagfilter);
             })->get(),
         ]);
