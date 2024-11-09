@@ -1,83 +1,49 @@
-<style>
-    ::placeholder {
-        color: orangered;
-    }
-</style>
-<div class="font-lex min-h-screen bg-gradient-to-tl from-gray-50 via-gray-100 to-gray-400 py-16 bg-cover bg-center">
-    <x-slot name="header">Tree view</x-slot>
-    {{-- border-t-2 border-blue-600 --}}
-    <div
-        class="bg-white/70 w-10/12 mx-auto min-h-[40rem] flex  justify-center items-center rounded-md shadow-md shadow-gray-300 bg-cover ">
 
-        <div class="w-full flex-col flex  justify-center items-center gap-y-5">
-            {{--            <x-livewire.network.items.user-card :list="$user"/>--}}
-            <div class="">
-                <x-livewire.network.items.demo-user-card/>
-            </div>
-            <div class="w-1/12 flex space-x-10">
-                <div class="w-1/2 border-t border-blue-700"></div>
-                <div class="w-1/2 border-t border-blue-700"></div>
-            </div>
-            <div class="flex gap-x-10">
-                <x-livewire.network.items.demo-user-card/>
-                <x-livewire.network.items.demo-user-card/>
-            </div>
-            <div class="w-5/12 flex space-x-10">
-                <div class="w-6/12 border-t border-blue-700"></div>
-                <div class="w-6/12 border-t border-blue-700"></div>
-            </div>
 
-            <div class="flex gap-x-10">
-                <div class="flex gap-x-44">
-                    <x-livewire.network.items.demo-user-card/>
-                    <x-livewire.network.items.demo-user-card/>
-                </div>
-                <div class="flex gap-x-44">
-                    <x-livewire.network.items.demo-user-card/>
-                    <x-livewire.network.items.demo-user-card/>
-                </div>
-            </div>
-            <div class="w-9/12 flex space-x-10">
-                <div class="w-1/2 flex">
-                <div class="w-1/4 "></div>
-                <div class="w-1/4 border-t border-blue-700"></div>
-                <div class="w-1/4 "></div>
-                <div class="w-1/4 border-t border-blue-700"></div>
-                </div>
-                <div class="w-1/2 flex">
-                    <div class="w-1/4 border-t border-blue-700"></div>
-                    <div class="w-1/4 "></div>
-                    <div class="w-1/4 border-t border-blue-700"></div>
-                    <div class="w-1/4 "></div>
-                </div>
-            </div>
+<div class="bg-gray-100 py-16">
+    <x-slot name="header">Referral View</x-slot>
+    <div class="w-9/12 mx-auto p-6 bg-gray-50 rounded-md shadow ">
+        <h2 class="text-3xl font-bold mb-4">Down line Tree</h2>
+        <h2 class="text-sm text-gray-400">The Network of your team</h2>
 
-            <div class="flex gap-x-10">
-                <div class="flex gap-x-20">
-                    <div class="flex gap-x-5">
-                        <x-livewire.network.items.demo-user-card/>
-                        <x-livewire.network.items.new-user-card/>
-                    </div>
-                    <div class="flex gap-x-5">
-                        <x-livewire.network.items.new-user-card/>
-                        <x-livewire.network.items.demo-user-card/>
-                    </div>
-                </div>
-                <div class="flex gap-x-20">
-                    <div class="flex gap-x-5">
-                        <x-livewire.network.items.demo-user-card/>
-                        <x-livewire.network.items.new-user-card/>
-                    </div>
-                    <div class="flex gap-x-5">
-                        <x-livewire.network.items.demo-user-card/>
-                        <x-livewire.network.items.new-user-card/>
-                    </div>
-                </div>
-
-            </div>
+        <div class="w-full flex justify-center">
+            <ul class="w-full list-none">
+                @foreach ($userTree as $user)
+                    @include('livewire.network.tree.user-tree', ['user' => $user])
+                @endforeach
+            </ul>
         </div>
-
-
     </div>
 
+    <style>
+        /* Custom styles for connecting lines */
+        .tree {
+            position: relative;
+        }
+
+        .tree li {
+            list-style-type: none;
+            position: relative;
+        }
+
+        .tree li::before {
+            content: '';
+            position: absolute;
+            top: -20px; /* Adjust based on your design */
+            left: 50%;
+            width: 1px;
+            height: 20px; /* Height of the vertical line */
+            background: #ccc; /* Line color */
+            transform: translateX(-50%);
+        }
+
+        .tree li:first-child::before {
+            display: none; /* Hide line for the first child */
+        }
+
+        .tree ul {
+            padding-left: 0;
+            margin-top: 20px; /* Space between parent and children */
+        }
+    </style>
 </div>
