@@ -40,20 +40,25 @@
                     <!-- Table Body ------------------------------------------------------------------------------------------->
 
                     <x-slot:table_body name="table_body">
-{{--                        @foreach($user_data as $index => $user)--}}
+                        @foreach($topups as $index => $topup)
                             <x-table.row>
-                                <x-table.cell-text>1</x-table.cell-text>
-                                <x-table.cell-text>Demo001</x-table.cell-text>
-                                <x-table.cell-text>Demo</x-table.cell-text>
-                                <x-table.cell-text>Rs.650</x-table.cell-text>
-                                <x-table.cell-text>{{date('Y-m-d H:i:s');}}</x-table.cell-text>
+                                <x-table.cell-text>{{$index+1}}</x-table.cell-text>
+                                <x-table.cell-text>{{$topup->user_id}}</x-table.cell-text>
+                                <x-table.cell-text>{{$topup->username}}</x-table.cell-text>
+                                <x-table.cell-text>{{$topup->amount}}</x-table.cell-text>
+                                <x-table.cell-text>{{$topup->created_at}}</x-table.cell-text>
                             </x-table.row>
-{{--                        @endforeach--}}
+                        @endforeach
 
                     </x-slot:table_body>
                 </x-table.form>
             </div>
-            <div class="text-gray-600">Pagination here.... 1 2 3 4 5 6 ....</div>
+
+            <div class="w-7/12 mx-auto py-16">
+                {{ $list->links() }}
+            </div>
+
+{{--            <div class="text-gray-600">Pagination here.... 1 2 3 4 5 6 ....</div>--}}
         </div>
     </x-forms.m-panel>
 </div>

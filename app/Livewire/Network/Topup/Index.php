@@ -42,6 +42,7 @@ class Index extends Component
 //            $this->desc = '';
             $this->dispatch('notify', ...['type' => 'success', 'content' => $message . ' Successfully']);
         }
+        $this->clearFields();
         return '';
     }
     #endregion
@@ -58,6 +59,17 @@ class Index extends Component
             return $obj;
         }
         return null;
+    }
+    #endregion
+
+    #region[Clear-Fields]
+    public function clearFields(): void
+    {
+        $this->common->vid = '';
+        $this->common->vname = '';
+        $this->username = '';
+        $this->amount = '';
+        $this->password = '';
     }
     #endregion
 

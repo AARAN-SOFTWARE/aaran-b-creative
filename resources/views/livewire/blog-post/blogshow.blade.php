@@ -151,19 +151,20 @@
             @foreach ($comments as $index=>$comment)
                 <div class="w-full border-b bg-white p-5 flex gap-x-5 rounded">
 
-                    <img scr="{{$comment->profile_photo_path}}" class="w-10 h-10 rounded-full bg-orange-100"/>
-
-                    <div class="w-full space-y-2">
-                        <div class="text-xs font-semibold">{{ $comment->user ? $comment->user->name : 'Guest' }}:
-                        </div>
+                    <img src="{{$comment->user->profile_photo_url}}" class="w-10 h-10 rounded-full bg-orange-100" alt="" />
+                    <img scr="" alt="">
+                    <div class="w-full space-y-3">
+                        <div class="text-xs font-semibold">{{ $comment->user ? $comment->user->name : 'Guest' }}:</div>
                         <div class="text-xs">{{ $comment->vname }}</div>
+                        <div class="overflow-hidden rounded-md">
+                            <img src="{{ URL(\Illuminate\Support\Facades\Storage::url('images/'.$comment->image)) }}" alt="😄 no image yet 😊"
+                                 class="w-auto h-28 text-md text-gray-400 transition-all duration-300 ease-linear rounded-md hover:scale-105"
+                            />
+                        </div>
+
                         <div class="w-full flex justify-between">
                             <div class="text-xs text-gray-400">{{ $comment->created_at->diffForHumans() }}</div>
 
-                            <div>
-                                <img scr="{{ \Illuminate\Support\Facades\Storage::url('/images/'.$comment->image) }}" alt=""
-                                     class="w-10 h-10 rounded-full "/>
-                            </div>
 
                             <div class="inline-flex text-gray-500 gap-x-3">
                                 <button wire:click="editComments({{ $comment->id }})" class="rounded-md ">
