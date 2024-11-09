@@ -20,7 +20,7 @@ class UserTreeView extends Component
     public function render()
     {
         return view('livewire.network.tree.user-tree-view')->with([
-            'userTree' => $this->buildTree($this->users,'3'),
+            'userTree' => $this->buildTree($this->users,auth()->id()),
         ]);
     }
 
@@ -29,11 +29,7 @@ class UserTreeView extends Component
         $branch = [];
 
         foreach ($users as $user) {
-            if ($user->parent_id == $parentId) {
-                $children = $this->buildTree($users, $user->id);
-                if ($children) {
-                    $user->children = $children;
-                }
+            if ($user->id == $parentId) {
                 $branch[] = $user;
             }
         }

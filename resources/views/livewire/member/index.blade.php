@@ -14,7 +14,7 @@
 
                     <x-table.header-serial></x-table.header-serial>
 
-                    <x-table.header-text>profile_photo_path</x-table.header-text>
+                    <x-table.header-text width="12%">profile_photo_path</x-table.header-text>
                     <x-table.header-text wire:click.prevent="sortBy('id')">username
                     </x-table.header-text>
                     <x-table.header-text wire:click.prevent="sortBy('id')">name
@@ -33,7 +33,11 @@
 
                         <x-table.row>
                             <x-table.cell-text>{{$index+1}}</x-table.cell-text>
-                            <x-table.cell-text>{{$row->profile_photo_path}}</x-table.cell-text>
+                            <x-table.cell-text center>
+                                <div class="w-full flex justify-center">
+                                <img src="{{$row->profile_photo_url}}" alt="" class="w-12 h-12 rounded-full">
+                                </div>
+                            </x-table.cell-text>
                             <x-table.cell-text>{{$row->username}}</x-table.cell-text>
                             <x-table.cell-text>{{$row->name}}</x-table.cell-text>
                             <x-table.cell-text>{{$row->email}}</x-table.cell-text>
