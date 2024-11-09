@@ -64,6 +64,8 @@ class Blogshow extends Component
                 ];
                 $this->common->edit($comment, $extraFields);
                 $this->reset('common.vname');
+                $this->reset('image');
+                $this->reset('old_image');
             }
         }
 

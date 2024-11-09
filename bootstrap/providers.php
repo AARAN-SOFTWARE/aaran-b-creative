@@ -14,5 +14,6 @@ return [
     Aaran\Blog\Providers\BlogServiceProvider::class,
 
     Aaran\Network\Providers\NetworkServiceProvider::class,
+    Aaran\Profile\Providers\ProfileServiceProvider::class,
 
 ];
