@@ -11,15 +11,15 @@
                 <div>New TopUp</div>
                 <div>Wallet Balance: 0</div>
 
-                <x-input.floating label="Username"/>
+                <x-input.floating wire:model="username" label="Username"/>
                 <div class="flex-col flex">
-                    <x-input.floating label="Rupees"/>
+                    <x-input.floating wire:model="amount" label="Rupees"/>
                     <div class="text-xs text-orange-700">Amount Should be on Rupees(s)</div>
                 </div>
 
-                <x-input.floating label="Transaction password" />
+                <x-input.floating wire:model="password" label="Transaction password" />
             <div>
-                <button class="w-full py-3 bg-blue-600 text-white text-md text-center rounded">Proceed</button>
+                <button wire:click="getSave()" class="w-full py-3 bg-blue-600 text-white text-md text-center rounded">Proceed</button>
             </div>
             </div>
         </div>

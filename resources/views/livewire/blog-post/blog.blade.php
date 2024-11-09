@@ -59,6 +59,11 @@
             </div>
             <x-web.items.blog.newsletter/>
         </div>
+
+    </div>
+
+    <div class="w-7/12 mx-auto py-16">
+        {{$list->links()}}
     </div>
 
     <x-web.home.footer-address/>
