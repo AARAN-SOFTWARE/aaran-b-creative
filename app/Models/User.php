@@ -61,6 +61,11 @@ class User extends Authenticatable
         return $this->hasMany(User::class, 'parent_id');
     }
 
+    public function grandchildren()
+    {
+        return $this->hasManyThrough(User::class, User::class, 'parent_id', 'parent_id');
+    }
+
     public function calculateLevel()
     {
         return $this->parent ? $this->parent->calculateLevel() + 1 : 0;
