@@ -12,9 +12,9 @@ return new class extends Migration
         Schema::create('topups', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('username');
             $table->string('amount');
             $table->string('password');
+            $table->boolean('active_id');
             $table->timestamps();
         });
     }

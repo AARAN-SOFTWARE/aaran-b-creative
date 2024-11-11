@@ -14,20 +14,38 @@ class Index extends Component
     {
         // Load users with their parent-child relationships
         $this->users = $this->getUsersWithLimitedChildren();
-//        ->groupBy('parent_id');
     }
+
     public function getUsersWithLimitedChildren()
     {
         // Step 1: Eager load users with their children
         $users = User::with('children')->get();
 
-        // Step 2: Limit each user's children to the first two
+        // Step 2: Limit each user's children recursively
         $users->each(function ($user) {
-            $user->children = $user->children->take(2);
+            $this->limitChildren($user, 2, 0); // Limit to first 2 children and start at level 0
         });
 
         return $users; // Return the modified users collection
     }
+
+
+    private function limitChildren($user, $limit, $currentLevel)
+    {
+        // Limit the user's direct children if we are below the max level
+        if ($currentLevel < 3) {
+            $user->children = $user->children->take($limit);
+
+            // Recursively limit each child's children, increasing the level
+            foreach ($user->children as $child) {
+                $this->limitChildren($child, $limit, $currentLevel + 1);
+            }
+        } else {
+            // If we reach level 5, clear children to prevent further nesting
+            $user->children = collect(); // Clear children at level 5
+        }
+    }
+
 
     public function render()
     {
@@ -48,4 +66,7 @@ class Index extends Component
         }
         return $branch;
     }
+
+
+
 }

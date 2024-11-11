@@ -18,22 +18,20 @@ class Index extends Component
     #region[save]
     public function getSave(): string
     {
-        if ($this->username != '') {
+        if ($this->amount != '') {
 
             if ($this->common->vid == "") {
-                $this->validate(['username' => 'required|unique:topups,username']);
                 Topup::create([
                     'user_id' => auth()->id(),
-                    'username' => Str::upper($this->username),
                     'amount' => $this->amount,
                     'password' => $this->password,
+                    'active_id'=>1,
                 ]);
                 $message = "Saved";
 
             } else {
                 $obj = Topup::find($this->common->vid);
                 $obj->user_id = auth()->id();
-                $obj->username = Str::upper($this->username);
                 $obj->amount = $this->amount;
                 $obj->password = $this->password;
                 $obj->save();
@@ -53,7 +51,6 @@ class Index extends Component
         if ($id) {
             $obj = Topup::find($id);
             $this->common->vid = $obj->id;
-            $this->username = $obj->username;
             $this->amount = $obj->amount;
             $this->password = $obj->password;
             return $obj;
@@ -66,8 +63,6 @@ class Index extends Component
     public function clearFields(): void
     {
         $this->common->vid = '';
-        $this->common->vname = '';
-        $this->username = '';
         $this->amount = '';
         $this->password = '';
     }
@@ -75,8 +70,6 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.network.topup.index')->with([
-          'list' => Topup::all()
-        ]);
+        return view('livewire.network.topup.index');
     }
 }
