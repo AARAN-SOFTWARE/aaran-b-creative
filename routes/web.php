@@ -26,6 +26,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/icons', App\Livewire\Utilities\Icon\Index::class)->name('icons');
     Route::get('/test', App\Livewire\Test\Index::class)->name('test');
     Route::get('/tree', App\Livewire\Network\Tree\Index::class)->name('tree');
+    Route::get('/down-lines', App\Livewire\Network\Tree\Downline::class)->name('down-line');
     Route::get('/tree/{id}/show', App\Livewire\Network\Tree\Show::class)->name('tree.show');
     Route::get('/topUp', App\Livewire\Network\Topup\Index::class)->name('topUp.index');
     Route::get('/topUp/report', App\Livewire\Network\Topup\Show::class)->name('topUp.report');

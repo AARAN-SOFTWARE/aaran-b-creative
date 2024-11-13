@@ -31,7 +31,7 @@
                         <x-table.header-text wire:click.prevent="sortBy('id')">email
                         </x-table.header-text>
                         <x-table.header-text>phone</x-table.header-text>
-                        <x-table.header-text>usertype</x-table.header-text>
+                        <x-table.header-text>Join Date</x-table.header-text>
 
 
                     </x-slot:table_header>
@@ -64,7 +64,7 @@
                                     <x-table.cell-text>{{$grandchild->name}}</x-table.cell-text>
                                     <x-table.cell-text>{{$grandchild->email}}</x-table.cell-text>
                                     <x-table.cell-text>{{$grandchild->phone}}</x-table.cell-text>
-                                    <x-table.cell-text>{{$grandchild->usertype}}</x-table.cell-text>
+                                    <x-table.cell-text>{{ date('d-M-Y', strtotime($grandchild->created_at)) }}</x-table.cell-text>
                                 </x-table.row>
                             @endforeach
                         @endforeach
@@ -72,6 +72,41 @@
 
                 </x-table.form>
             </div>
+
+            <x-accordion-single.list header-color="bg-orange-600" text-color="text-white" heading="Level 1">
+                <ul class="px-8">
+                    <li>Jerry</li>
+                    <li>George</li>
+                    <li>Kumar</li>
+                    <li>Siva</li>
+                    <li>Patel</li>
+                </ul>
+            </x-accordion-single.list>
+            <x-accordion-single.list header-color="bg-green-600" text-color="text-white"  heading="Level 2">
+                <ul class="px-20">
+                    <li>Jerry</li>
+                    <li>George</li>
+                    <li>Kumar</li>
+                    <li>Helan</li>
+                    <li>Patel</li>
+                    <li>Jerry</li>
+                    <li>George</li>
+                    <li>Kumar</li>
+                    <li>Helan</li>
+                    <li>Patel</li>
+                </ul>
+            </x-accordion-single.list>
+            <x-accordion-single.list header-color="bg-violet-600" text-color="text-white"  heading="Level 3">
+                <ul class="px-20">
+                    <li>Jerry</li>
+                    <li>George</li>
+                    <li>Kumar</li>
+                    <li>George</li>
+                    <li>Kumar</li>
+                    <li>Helan</li>
+                    <li>Patel</li>
+                </ul>
+            </x-accordion-single.list>
         </x-forms.m-panel>
 
     </div>

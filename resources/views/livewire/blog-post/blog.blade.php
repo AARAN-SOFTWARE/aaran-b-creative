@@ -77,10 +77,10 @@
 
             {{-- <x-input.model-text wire:model="common.vname" :label="'Name'"/>--}}
 
-            <div class="inline-flex gap-3">
-                <input type="checkbox" wire:model="visibility">
-                <label for="">Public</label>
-            </div>
+{{--            <div class="inline-flex gap-3">--}}
+{{--                <input type="checkbox" wire:model="visibility">--}}
+{{--                <label for="">Public</label>--}}
+{{--            </div>--}}
 
             <x-input.floating wire:model="common.vname" label="Name"/>
             @error('common.vname')

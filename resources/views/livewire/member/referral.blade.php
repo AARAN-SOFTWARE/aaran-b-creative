@@ -28,7 +28,7 @@
                         <x-table.header-text wire:click.prevent="sortBy('id')">email
                         </x-table.header-text>
                         <x-table.header-text>phone</x-table.header-text>
-                        <x-table.header-text>usertype</x-table.header-text>
+                        <x-table.header-text>Join Date</x-table.header-text>
                     </x-slot:table_header>
 
                     <x-slot:table_body name="table_body">
@@ -44,7 +44,7 @@
                                 <x-table.cell-text>{{$row->name}}</x-table.cell-text>
                                 <x-table.cell-text>{{$row->email}}</x-table.cell-text>
                                 <x-table.cell-text>{{$row->phone}}</x-table.cell-text>
-                                <x-table.cell-text>{{$row->usertype}}</x-table.cell-text>
+                                <x-table.cell-text>{{ date('d-M-Y', strtotime($row->created_at)) }}</x-table.cell-text>
                             </x-table.row>
                         @endforeach
                     </x-slot:table_body>
