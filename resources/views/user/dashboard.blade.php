@@ -1,55 +1,10 @@
 <x-app-layout>
 
-    <div class="space-y-10">
+    <div class="space-y-10 font-lex">
         <x-slot name="header">Dashboard</x-slot>
 
-        <div class="flex justify-end gap-x-3 my-4">
-            <button
-                class="max-w-max px-3 py-2 bg-gray-800 text-white text-xs inline-flex items-center gap-x-1 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="size-4">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
-                </svg>
-                <span>Download</span>
-            </button>
-            <button
-                class="max-w-max px-3 py-2 bg-gray-800 text-white text-xs inline-flex items-center gap-x-1 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="size-4">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/>
-                </svg>
-
-                <span>Deposit</span>
-            </button>
-            <button
-                class="max-w-max px-3 py-2 bg-gray-800 text-white text-xs inline-flex items-center gap-x-1 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="size-4">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3"/>
-                </svg>
-
-                <span>Withdraw</span>
-            </button>
-            <button
-                class="max-w-max px-3 py-2 bg-orange-600 text-white text-xs inline-flex items-center gap-x-1 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="size-4">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/>
-                </svg>
-                <span>Refresh</span>
-            </button>
-
-
-
-        </div>
-
         <div class="relative flex overflow-x-hidden bg-purple-400 my-4 space-x-8">
-            @for( $i=1; $i<=20; $i++)
-
+            @for( $i=1; $i<=50; $i++)
                 <div class="py-2 animate-marquee whitespace-nowrap text-white text-sm space-x-1">
                     <span class=" ">Your</span>
                     <span class=" ">ID</span>
@@ -61,28 +16,27 @@
                     <span class=" ">ID.</span>
                 </div>
             @endfor
-
         </div>
 
         <div class="flex justify-between h-96 gap-5">
             <div class="w-4/12 h-full gap-y-3 p-5 rounded-md border-gray-300 border flex-col flex justify-between">
                 <div class="w-full h-full p-5 border border-gray-300 text-sm rounded-md flex-col flex justify-between">
-                    <div class="border-b border-gray-300"><span>User ID:</span><span
-                            class="font-bold text-sm text-violet-600">{{$users->username}}</span></div>
-                    <div class="border-b border-gray-300"><span>{{$users->name}}</span><span
-                            class="font-bold text-sm text-violet-600">DEMO</span>
+                    <div class="border-b border-gray-300 space-x-3"><span>User ID:</span><span
+                            class="font-bold text-sm text-orange-600">{{$users->username}}</span></div>
+                    <div class="border-b border-gray-300 space-x-3"><span>{{$users->name}}</span><span
+                            class="font-bold text-sm text-orange-600">DEMO</span>
                     </div>
-                    <div class="border-b border-gray-300"><span>Referral ID:</span><span
-                            class="font-bold text-sm text-violet-600">0</span></div>
-                    <div class="border-b border-gray-300"><span>Total Topup:</span><span
-                            class="font-bold text-sm text-violet-600">₹ 1800</span></div>
-                    <div class="border-b border-gray-300"><span>Rewards:</span><span
-                            class="font-bold text-sm text-violet-600">₹ 320</span></div>
+                    <div class="border-b border-gray-300 space-x-3"><span>Referral ID:</span><span
+                            class="font-bold text-sm text-orange-600">0</span></div>
+                    <div class="border-b border-gray-300 space-x-3"><span>Total Topup:</span><span
+                            class="font-bold text-sm text-orange-600">₹ 1800</span></div>
+                    <div class="border-b border-gray-300 space-x-3"><span>Rewards:</span><span
+                            class="font-bold text-sm text-orange-600">₹ 320</span></div>
                 </div>
-                <button class="w-full bg-violet-600 text-white text-sm font-semibold text-center pax-4 py-2 rounded-sm">
+                <button class="w-full bg-orange-600 text-white text-sm font-semibold text-center pax-4 py-2 rounded-sm">
                     Earning Wallet: ₹ 427.50
                 </button>
-                <button class="w-full bg-violet-600 text-white text-sm font-semibold text-center pax-4 py-2 rounded-sm">
+                <button class="w-full bg-orange-600 text-white text-sm font-semibold text-center pax-4 py-2 rounded-sm">
                     Topup Wallet: ₹ 1999.00
                 </button>
             </div>
@@ -189,7 +143,7 @@
                         </svg>
 
                     </div>
-                    <div class="w-full space-y-3">
+                    <div class="w-full space-y-3 text-sm">
                         <div>Referral Link</div>
                         <div class="border-b border-gray-300"></div>
                         <div>Left Referral Link</div>

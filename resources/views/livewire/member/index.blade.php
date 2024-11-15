@@ -31,8 +31,7 @@
                         <x-table.header-text wire:click.prevent="sortBy('id')">email
                         </x-table.header-text>
                         <x-table.header-text>phone</x-table.header-text>
-                        <x-table.header-text>usertype</x-table.header-text>
-
+                        <x-table.header-text>Join Date</x-table.header-text>
 
                     </x-slot:table_header>
 
@@ -64,7 +63,7 @@
                                     <x-table.cell-text>{{$grandchild->name}}</x-table.cell-text>
                                     <x-table.cell-text>{{$grandchild->email}}</x-table.cell-text>
                                     <x-table.cell-text>{{$grandchild->phone}}</x-table.cell-text>
-                                    <x-table.cell-text>{{$grandchild->usertype}}</x-table.cell-text>
+                                    <x-table.cell-text>{{ date('d-M-Y', strtotime($grandchild->created_at)) }}</x-table.cell-text>
                                 </x-table.row>
                             @endforeach
                         @endforeach
@@ -72,6 +71,8 @@
 
                 </x-table.form>
             </div>
+
+
         </x-forms.m-panel>
 
     </div>

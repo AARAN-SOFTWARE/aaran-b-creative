@@ -22,7 +22,7 @@ export default {
 
             },
             animation: {
-                marquee: 'marquee 25s linear infinite',
+                marquee: 'marquee 60s linear infinite',
             },
             keyframes: {
                 marquee: {

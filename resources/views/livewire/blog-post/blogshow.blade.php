@@ -156,9 +156,9 @@
                     <div class="w-full space-y-3">
                         <div class="text-xs font-semibold">{{ $comment->user ? $comment->user->name : 'Guest' }}:</div>
                         <div class="text-xs">{{ $comment->vname }}</div>
-                        <div class="overflow-hidden rounded-md">
+                        <div class="overflow-hidden rounded-md max-w-max">
                             <img src="{{ URL(\Illuminate\Support\Facades\Storage::url('images/'.$comment->image)) }}" alt="😄 no image yet 😊"
-                                 class="w-auto h-28 text-md text-gray-400 transition-all duration-300 ease-linear rounded-md hover:scale-105"
+                                 class="w-auto h-28 text-md text-gray-400 transition-all duration-300 ease-linear hover:scale-105"
                             />
                         </div>
 
