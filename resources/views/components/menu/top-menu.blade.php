@@ -26,21 +26,19 @@
         </div>
 
         <div class="w-5/12 flex sm:flex-row flex-col sm:justify-end justify-evenly items-center space-y-1">
-            <div class="flex max-w-max justify-center items-center">
-{{--                <livewire:default-company.index/>--}}
-            </div>
+
 
             {{-- login menu--}}
             <div class="sm:flex sm:items-center ">
                 <!-- Settings Dropdown -->
-                <div class="ml-3 relative">
+                <div class=" relative">
                     <x-jet.dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @auth
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                     <button
                                         class="flex sm:text-sm text-xs border-2 border-gray-300 rounded-full focus:outline-none focus:border-gray-300 transition">
-                                        <img class="h-10 w-12 rounded-full object-cover"
+                                        <img class="h-10 w-10 rounded-full object-cover"
                                              src="{{ Auth::user()->profile_photo_url }}"
                                              alt="{{ Auth::user()->name }}"/>
                                     </button>

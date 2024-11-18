@@ -5,7 +5,7 @@
     <div class="w-20 h-[88px] ">
         <div class="w-full h-full relative flex-col flex justify-end">
             <div class="absolute bottom-10 left-4 w-12 h-12 bg-gray-300 p-1.5 rounded-full">
-                <div class="w-full h-full bg-orange-600 rounded-full flex justify-center items-center">
+                <div class="w-full h-full bg-green-600 rounded-full flex justify-center items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                          class="size-6 fill-white">
                         <path fill-rule="evenodd"
