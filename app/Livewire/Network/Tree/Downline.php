@@ -62,6 +62,8 @@ class Downline extends Component
     public $LevelOneCollection;
     public $LevelTwoCollection; // Collection for Level Two children
     public $LevelTwoChildrenCollections = []; // Array to hold collections of Level Two children's children
+    public $LevelTwoChildChildrenCollections = []; // Array to hold collections for each Level Two child's children
+    public $LevelTwoChildGrandChildrenCollections = []; // Array to hold grandchildren collections
 
     public function mount()
     {
@@ -76,8 +78,11 @@ class Downline extends Component
         // Limit LevelOneCollection to only the first two children
         $this->LevelOneCollection = $this->currentUser->children->take(2);
 
-        // Initialize LevelTwoCollection
+        // Initialize collections
         $this->LevelTwoCollection = collect();
+        $this->LevelTwoChildrenCollections = [];
+        $this->LevelTwoChildChildrenCollections = [];
+        $this->LevelTwoChildGrandChildrenCollections = [];
 
         // Get first two children of each child in LevelOneCollection
         foreach ($this->LevelOneCollection as $child) {
@@ -91,6 +96,32 @@ class Downline extends Component
         foreach ($this->LevelTwoCollection as $index => $levelTwoChild) {
             // Store the first two children of each Level Two child in an array
             $this->LevelTwoChildrenCollections[$index] = $levelTwoChild->children->take(2);
+
+            // Initialize a collection for each child's children
+            foreach ($this->LevelTwoChildrenCollections[$index] as $childIndex => $child) {
+                // Store the first two children of each Level Two child's child in a separate variable
+                if (!isset($this->LevelTwoChildChildrenCollections[$index])) {
+                    $this->LevelTwoChildChildrenCollections[$index] = [];
+                }
+                // Store grandchildren collections
+                $this->LevelTwoChildChildrenCollections[$index][$childIndex] = $child->children->take(2);
+            }
+        }
+
+        // Now, create a separate collection for grandchildren of each level two child
+        foreach ($this->LevelTwoChildChildrenCollections as $index => $children) {
+            foreach ($children as $childIndex => $grandChildren) {
+                if (!isset($this->LevelTwoChildGrandChildrenCollections[$index])) {
+                    $this->LevelTwoChildGrandChildrenCollections[$index] = [];
+                }
+                foreach ($grandChildren as $grandChild) {
+                    if (!isset($this->LevelTwoChildGrandChildrenCollections[$index][$childIndex])) {
+                        $this->LevelTwoChildGrandChildrenCollections[$index][$childIndex] = []; // Initialize if not set
+                    }
+                    // Store grandchildren in a separate collection if needed
+                    array_push($this->LevelTwoChildGrandChildrenCollections[$index][$childIndex], ...$grandChild->children); // Spread operator to add children directly
+                }
+            }
         }
     }
 
@@ -101,7 +132,10 @@ class Downline extends Component
             'levelOne' => $this->LevelOneCollection,
             'levelTwo' => $this->LevelTwoCollection, // Pass Level Two collection to the view
             'levelTwoChildrenCollections' => $this->LevelTwoChildrenCollections, // Pass Level Two children's collections to the view
+            'levelTwoChildChildrenCollections' => $this->LevelTwoChildChildrenCollections, // Pass Level Two child's children's collections to the view
+            'levelTwoChildGrandChildrenCollections' => $this->LevelTwoChildGrandChildrenCollections, // Pass grandchildren collections to the view
         ]);
     }
+
 
 }
